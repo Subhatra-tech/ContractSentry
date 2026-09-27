@@ -1,0 +1,1679 @@
+{
+  "_metadata": {
+    "dataset_name": "Contract Understanding Atticus Dataset (CUAD) v1",
+    "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "atticus_url": "https://www.atticusprojectai.org/cuad",
+    "citation": "Dan Hendrycks, Collin Burns, Anya Chen, Spencer Ball. CUAD: An Expert-Annotated NLP Dataset for Legal Contract Review. arXiv:2103.06268 (2021).",
+    "total_clauses": 108,
+    "total_categories_mapped": 6,
+    "unmatched_categories": [
+      "Confidentiality"
+    ],
+    "category_summary": {
+      "Termination": {
+        "extracted_count": 18,
+        "unique_contracts_sampled": 18,
+        "cuad_categories_sampled": [
+          "Notice Period To Terminate Renewal",
+          "Renewal Term",
+          "Post-Termination Services",
+          "Termination For Convenience"
+        ],
+        "flagged": false
+      },
+      "Payment": {
+        "extracted_count": 18,
+        "unique_contracts_sampled": 18,
+        "cuad_categories_sampled": [
+          "Minimum Commitment",
+          "Price Restrictions",
+          "Volume Restriction",
+          "Revenue/Profit Sharing"
+        ],
+        "flagged": false
+      },
+      "Confidentiality": {
+        "extracted_count": 0,
+        "flagged": true,
+        "reason": "FLAGGED: CUAD v1 does NOT have a dedicated 'Confidentiality' or 'Non-Disclosure' category among its 41 labels. The Atticus Project designed CUAD primarily for corporate M&A due diligence, where NDAs are typically separate standalone agreements. Confidentiality is only mentioned in CUAD as a carve-out example under 'Uncapped Liability'. Per instructions, this absence is explicitly flagged and NOT forced into an unrelated bucket."
+      },
+      "Intellectual Property": {
+        "extracted_count": 18,
+        "unique_contracts_sampled": 18,
+        "cuad_categories_sampled": [
+          "License Grant",
+          "Unlimited/All-You-Can-Eat-License",
+          "Source Code Escrow",
+          "Ip Ownership Assignment",
+          "Joint Ip Ownership",
+          "Irrevocable Or Perpetual License",
+          "Non-Transferable License"
+        ],
+        "flagged": false
+      },
+      "Liability": {
+        "extracted_count": 18,
+        "unique_contracts_sampled": 18,
+        "cuad_categories_sampled": [
+          "Warranty Duration",
+          "Uncapped Liability",
+          "Cap On Liability",
+          "Liquidated Damages"
+        ],
+        "flagged": false
+      },
+      "Indemnity": {
+        "extracted_count": 18,
+        "unique_contracts_sampled": 18,
+        "cuad_categories_sampled": [
+          "Insurance",
+          "Uncapped Liability"
+        ],
+        "flagged": true
+      },
+      "Governing Law": {
+        "extracted_count": 18,
+        "unique_contracts_sampled": 18,
+        "cuad_categories_sampled": [
+          "Governing Law"
+        ],
+        "flagged": false
+      }
+    }
+  },
+  "category_mapping_summary": {
+    "Termination": {
+      "match_type": "direct_match",
+      "mapped_cuad_categories": [
+        "Termination For Convenience",
+        "Notice Period To Terminate Renewal",
+        "Renewal Term",
+        "Post-Termination Services"
+      ],
+      "is_flagged": false
+    },
+    "Payment": {
+      "match_type": "direct_match",
+      "mapped_cuad_categories": [
+        "Revenue/Profit Sharing",
+        "Price Restrictions",
+        "Minimum Commitment",
+        "Volume Restriction"
+      ],
+      "is_flagged": false
+    },
+    "Confidentiality": {
+      "match_type": "no_direct_match",
+      "mapped_cuad_categories": [],
+      "is_flagged": true
+    },
+    "Intellectual Property": {
+      "match_type": "direct_match",
+      "mapped_cuad_categories": [
+        "Ip Ownership Assignment",
+        "Joint Ip Ownership",
+        "License Grant",
+        "Non-Transferable License",
+        "Unlimited/All-You-Can-Eat-License",
+        "Irrevocable Or Perpetual License",
+        "Source Code Escrow"
+      ],
+      "is_flagged": false
+    },
+    "Liability": {
+      "match_type": "direct_match",
+      "mapped_cuad_categories": [
+        "Cap On Liability",
+        "Uncapped Liability",
+        "Liquidated Damages",
+        "Warranty Duration"
+      ],
+      "is_flagged": false
+    },
+    "Indemnity": {
+      "match_type": "partial_indirect_match",
+      "mapped_cuad_categories": [
+        "Uncapped Liability",
+        "Insurance"
+      ],
+      "is_flagged": true
+    },
+    "Governing Law": {
+      "match_type": "direct_match",
+      "mapped_cuad_categories": [
+        "Governing Law"
+      ],
+      "is_flagged": false
+    }
+  },
+  "categories": {
+    "Termination": [
+      {
+        "clause_text": "Either party may terminate this Agreement without cause at any time effective upon thirty (30) days' written notice.",
+        "source_contract": "CENTRACKINTERNATIONALINC_10_29_1999-EX-10.3-WEB SITE HOSTING AGREEMENT",
+        "cuad_category": "Termination For Convenience",
+        "product_category": "Termination",
+        "char_length": 116
+      },
+      {
+        "clause_text": "Notwithstanding the foregoing, this Agreement can be terminated by EKR at the end of the Initial Term by delivery of written notice to PPI at least one hundred eighty (180) days prior to the end of the Initial Term or any renewal term.",
+        "source_contract": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT ",
+        "cuad_category": "Notice Period To Terminate Renewal",
+        "product_category": "Termination",
+        "char_length": 235
+      },
+      {
+        "clause_text": "If Distributor complies with all of the terms of this Agreement, the Agreement shall be renewable on an annual basis for one (1) year terms for up to another ten (10) years on the same terms and conditions as set forth herein.",
+        "source_contract": "LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT",
+        "cuad_category": "Renewal Term",
+        "product_category": "Termination",
+        "char_length": 226
+      },
+      {
+        "clause_text": "Upon the termination of this Agreement, or upon Company's earlier requests, Consultant will deliver to Company all property relating to, and all tangible embodiments of, Inventions in Consultant's possession or control.",
+        "source_contract": "KIROMICBIOPHARMA,INC_05_11_2020-EX-10.23-CONSULTING AGREEMENT",
+        "cuad_category": "Post-Termination Services",
+        "product_category": "Termination",
+        "char_length": 219
+      },
+      {
+        "clause_text": "Either Party shall have the right to terminate this Agreement before the end of the Term for its convenience upon [***] written notice to the other Party (and any such termination shall become effective at the end of such [***]); [***].",
+        "source_contract": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+        "cuad_category": "Termination For Convenience",
+        "product_category": "Termination",
+        "char_length": 236
+      },
+      {
+        "clause_text": "After the Initial Term, this Agreement shall continue on a month to month basis until terminated by either party upon thirty (30) days prior written notice to the other setting forth the effective date of such termination.",
+        "source_contract": "FTENETWORKS,INC_02_18_2016-EX-99.4-STRATEGIC ALLIANCE AGREEMENT",
+        "cuad_category": "Notice Period To Terminate Renewal",
+        "product_category": "Termination",
+        "char_length": 222
+      },
+      {
+        "clause_text": "This Agreement shall continue until January 18, 2022, and thereafter shall continue automatically for successive annual periods ending on January 18th of each year, provided such continuance is specifically approved at least annually by (a) the Fund's Board of Trustees and (b) a vote of a majority (as defined in the 1940 Act) of the Fund's Trustees who are not interested persons (as defined in the 1940 Act) of the Fund and who have no direct or indirect financial interest in the operation of the Plan, in this Agreement, or any agreement related to the Plan (the \"Qualified Trustees\"), by vote cast in person at a meeting called for the purpose of voting on such approval.",
+        "source_contract": "IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement",
+        "cuad_category": "Renewal Term",
+        "product_category": "Termination",
+        "char_length": 677
+      },
+      {
+        "clause_text": "(a) such inspection, copying or audit must only be made after at least one Business Day's written notice; (b) such audit must not unreasonably interfere with the day to day operations of IntriCon; and (c) such audit must be at Dynamic Hearing's expense unless the auditor finds an underpayment royalty due under this Agreement in excess of 5% in which case IntriCon must reimburse Dynamic Hearing's reasonable cost of such audit; and (d) Audits will be limited to one audit in any calendar year.",
+        "source_contract": "INTRICONCORP_03_10_2009-EX-10.22-Strategic Alliance Agreement",
+        "cuad_category": "Post-Termination Services",
+        "product_category": "Termination",
+        "char_length": 495
+      },
+      {
+        "clause_text": "This Agreement may be terminated at any time, without the payment of any penalty, with respect to any series or the Trust, by the Board of Trustees of the Trust, or by the Sponsor, in each case on not less than 60 days' written notice to the other party.",
+        "source_contract": "DOMINIADVISORTRUST_02_18_2005-EX-99.(H)(2)-SPONSORSHIP AGREEMENT",
+        "cuad_category": "Termination For Convenience",
+        "product_category": "Termination",
+        "char_length": 254
+      },
+      {
+        "clause_text": "The term of this Agreement is twelve (12) months from the date hereof, and will be automatically renewed for one (1) additional twelve month period unless either party shall notify the other in writing of its intention not to renew. Such notice must be given ninety (90) days prior to expiration of the original term.",
+        "source_contract": "SIBANNAC,INC_12_04_2017-EX-2.1-Strategic Alliance Agreement",
+        "cuad_category": "Notice Period To Terminate Renewal",
+        "product_category": "Termination",
+        "char_length": 317
+      },
+      {
+        "clause_text": "4.7 Data protection. Each Party agrees to comply with all applicable data protection and privacy laws arising from its obligations, if any, under the Agreement and to reasonably co-operate with the other Party in order to allow the other Party to comply with any laws as deemed necessary from time to time. Each Party shall treat all data, information relating to Services, including but not limit to the customer personal data, as confidential. Each party warrants that it shall take appropriate technical and organizational measures against unauthorized or unlaw",
+        "source_contract": "OPERALTD_04_30_2020-EX-4.14-SERVICE AGREEMENT",
+        "cuad_category": "Renewal Term",
+        "product_category": "Termination",
+        "char_length": 564
+      },
+      {
+        "clause_text": "To the extent that there is Merchandise remaining at the Sale Termination Date (the \"Remaining Merchandise\"), such Remaining Merchandise shall be deemed automatically transferred to Agent free and clear of all liens, claims, and encumbrances. Agent and its affiliates shall be authorized to sell or otherwise dispose of the Remaining Merchandise with all logos, brand names, and other Intellectual Property intact, and shall be authorized to advertise the sale of the Remaining Merchandise using the Intellectual Property.",
+        "source_contract": "BONTONSTORESINC_04_20_2018-EX-99.3-AGENCY AGREEMENT",
+        "cuad_category": "Post-Termination Services",
+        "product_category": "Termination",
+        "char_length": 522
+      },
+      {
+        "clause_text": "This Agreement may be terminated by Nuance at any time, in its sole discretion, prior to the Distribution; provided, however, that this Agreement shall automatically terminate upon the termination of the Separation Agreement in accordance with its terms.",
+        "source_contract": "CerenceInc_20191002_8-K_EX-10.4_11827494_EX-10.4_Intellectual Property Agreement",
+        "cuad_category": "Termination For Convenience",
+        "product_category": "Termination",
+        "char_length": 254
+      },
+      {
+        "clause_text": "Thereafter, this Agreement shall automatically renew for subsequent one (1) year periods unless either party provides the other party with written notification at least thirty (30) days prior to the expiration of the initial five (5) year term or any one (1) year renewal thereof of its intention to terminate this Agreement.",
+        "source_contract": "CORIOINC_07_20_2000-EX-10.5-LICENSE AND HOSTING AGREEMENT",
+        "cuad_category": "Notice Period To Terminate Renewal",
+        "product_category": "Termination",
+        "char_length": 325
+      },
+      {
+        "clause_text": "When this Agreement expires, you will have the option to continue the franchise relationship with us for two (2) additional terms of ten (10) years each.",
+        "source_contract": "PfHospitalityGroupInc_20150923_10-12G_EX-10.1_9266710_EX-10.1_Franchise Agreement1",
+        "cuad_category": "Renewal Term",
+        "product_category": "Termination",
+        "char_length": 153
+      },
+      {
+        "clause_text": "Upon termination (but not expiration) of this Agreement for any reason, Licensee shall be entitled to use the Licensed Domain Names and Licensed Content for a limited period of time, not to exceed ninety (90) days, during which it shall diligently work to transition to another solution.",
+        "source_contract": "ChinaRealEstateInformationCorp_20090929_F-1_EX-10.32_4771615_EX-10.32_Content License Agreement",
+        "cuad_category": "Post-Termination Services",
+        "product_category": "Termination",
+        "char_length": 287
+      },
+      {
+        "clause_text": "Company at its sole discretion may at any time alter or cease providing the Customer Service which it has agreed to provide to Client relating to Client Website pursuant to this Agreement without any liability to Company.",
+        "source_contract": "Freecook_20180605_S-1_EX-10.3_11233807_EX-10.3_Hosting Agreement",
+        "cuad_category": "Termination For Convenience",
+        "product_category": "Termination",
+        "char_length": 221
+      },
+      {
+        "clause_text": "Following the Initial Term, either Party may terminate this Agreement without cause upon written notice to the other Party of at least 3 months.",
+        "source_contract": "HealthcareIntegratedTechnologiesInc_20190812_8-K_EX-10.1_11776966_EX-10.1_Reseller Agreement",
+        "cuad_category": "Notice Period To Terminate Renewal",
+        "product_category": "Termination",
+        "char_length": 144
+      }
+    ],
+    "Payment": [
+      {
+        "clause_text": "Commencing with the Calendar Quarter commencing on October 1, 2018, as consideration for the Valeant Activities performed by Valeant, Dova shall pay Valeant a promotion fee based on annual Net Sales during the Term, calculated as follows: (a) For any portion of Net Sales up to and equal [***] in a Calendar Year, an amount equal to [***] of such portion of Net Sales; (b) For any portion of Net Sales in excess of [***] and up to and equal [***] in a Calendar Year, an amount equal to [***] of such portion of Net Sales; and (c) For any portion of Net Sales in excess of [***] in a Calendar Year, [***] of such portion of Net Sales.",
+        "source_contract": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+        "cuad_category": "Revenue/Profit Sharing",
+        "product_category": "Payment",
+        "char_length": 633
+      },
+      {
+        "clause_text": "The Company also reserves the right to increase or decrease the price per unit based on Company wide changes in unit prices to all distributors of the Company, provided however, that any price changes, other than those based on the CPI, shall be uniformly applied to all distributors of the Products and shall reasonably applied to all distributors of the Products and shall reasonably reflect Company's costs of manufacturing the Products and/or market demand for the Products, provided further than any increase in price based upon market demand shall not be so great as to deprive Distributor of its normal and customary profit margin.",
+        "source_contract": "LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT",
+        "cuad_category": "Price Restrictions",
+        "product_category": "Payment",
+        "char_length": 638
+      },
+      {
+        "clause_text": "In each and every calendar year of this Agreement, CONSULTANT shall achieve a satisfactory record of play in a minimum of [* ****] professional golf association events on the SPGA and/or PGA tour (which shall include both the PGA and SPGA Tour Skins Games).",
+        "source_contract": "ADAMSGOLFINC_03_21_2005-EX-10.17-ENDORSEMENT AGREEMENT",
+        "cuad_category": "Minimum Commitment",
+        "product_category": "Payment",
+        "char_length": 257
+      },
+      {
+        "clause_text": "The Company will compensate Consultant at the rate of $400 per hour (19 hours cap monthly; anything over these hrs must be preapproved by management), payable in accordance with the Company's standard payroll schedule, and subject to withholding as legally required.",
+        "source_contract": "KIROMICBIOPHARMA,INC_05_11_2020-EX-10.23-CONSULTING AGREEMENT",
+        "cuad_category": "Volume Restriction",
+        "product_category": "Payment",
+        "char_length": 266
+      },
+      {
+        "clause_text": "As further consideration for the license and grant of Distribution Rights and other rights under this Agreement, EKR shall pay to PPI a royalty (\"Royalty\") equal to (a) $[**] for each [**] mg Vial of Product sold during the Term and $[**] for each [**] mg Vial of Product sold during the Term (the \"Minimum Royalty\") plus (b) an additional [**]% of any post Effective Date incremental price increase implemented by EKR over the Current Base Price of $[**] for the [**] mg Vial and $[**] for the [**] mg Vial (the \"Additional Royalty\"); provided, however, that Additional Royalty shall not be payable to the extent that the sum of (i) the Minimum Royalty and Additional Royalty payable hereunder and (ii) the Supply Price (as defined in the Supply Agreement) shall at any time during the Term exceed [**] percent ([**]%) of the net average selling price of the Product (the \"Royalty Cap\"); provided, however, that the Royalty Cap shall be [**] percent ([**]%) of the net average selling price of the Product during certain periods as described in Section 6.3(e) above.",
+        "source_contract": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT ",
+        "cuad_category": "Revenue/Profit Sharing",
+        "product_category": "Payment",
+        "char_length": 1067
+      },
+      {
+        "clause_text": "Subject to the remainder of this Section 3.2(b), on a Facility-by-Facility basis, if the Facility Conversion Costs of a Facility during any Fiscal Year following the first full Fiscal Year of the Term of the applicable Facility Addendum (such Fiscal Year, a \"Facility Conversion Cost Adjustment Fiscal Year\") are estimated to be (a) less than seventy-five percent (75%) of the Facility Conversion Costs for the Facility Conversion Cost Baseline Fiscal Year (as defined below) or (b) greater than one hundred and twenty-five percent (125%) of the Facility Conversion Costs for the Facility Conversion Cost Baseline Fiscal Year (clauses (a) and (b) referred to collectively as the \"Facility Conversion Cost Threshold\"), when adjusted to reflect a constant volume between the Facility Conversion Cost Adjustment Fiscal Year and the Facility Conversion Cost Baseline Fiscal Year, then the Price for such Product will be updated beginning with such Facility Conversion Cost Adjustment Fiscal Year to reflect one hundred and ten percent (110%) of the increase or decrease in Facility Conversion Costs.",
+        "source_contract": "UpjohnInc_20200121_10-12G_EX-2.6_11948692_EX-2.6_Manufacturing Agreement_ Supply Agreement",
+        "cuad_category": "Price Restrictions",
+        "product_category": "Payment",
+        "char_length": 1095
+      },
+      {
+        "clause_text": "For any Product or Solution sold to any perspective clients introduced by Bravatek registered with COMPANY via email to COMPANY's CEO and delivered through Bravatek or a COMPANY-designated distribution affiliate(s) or sales channel(s), Bravatek will receive a lead-finder fee, to be mutually discussed and finally decided by COMPANY at the range of minimum of 10% to maximum of 20% of project revenue, with an exact fee to be depending upon the overall project sales margin and cost of development and delivery of each project, payable NET 30 days after each client payment on delivered products received at COMPANY's bank account.",
+        "source_contract": "SIBANNAC,INC_12_04_2017-EX-2.1-Strategic Alliance Agreement",
+        "cuad_category": "Minimum Commitment",
+        "product_category": "Payment",
+        "char_length": 631
+      },
+      {
+        "clause_text": "The foregoing obligations of Wildform, following the initial 30 day period, shall be limited to a maximum of twenty (20) hours, or up to a maximum of one hundred twenty five (125) emails, whichever accumulates first.",
+        "source_contract": "ON2TECHNOLOGIES,INC_11_17_2006-EX-10.3-SUPPORT AND MAINTENANCE AGREEMENT",
+        "cuad_category": "Volume Restriction",
+        "product_category": "Payment",
+        "char_length": 216
+      },
+      {
+        "clause_text": "For the services to be rendered and facilities to be provided by the Sponsor hereunder, the Trust shall pay Domini a fee accrued daily and payable monthly at an annual rate equal to 0.50% of the Trust's average daily net assets for the Trust's then current fiscal year.",
+        "source_contract": "DOMINIADVISORTRUST_02_18_2005-EX-99.(H)(2)-SPONSORSHIP AGREEMENT",
+        "cuad_category": "Revenue/Profit Sharing",
+        "product_category": "Payment",
+        "char_length": 269
+      },
+      {
+        "clause_text": "The Use Fees shall remain the same as in the Initial Period and the fee for the Services shall not exceed $7000 for additional journals, $2000 maintenance fee on existing journals and $2000 per Gigabyte.",
+        "source_contract": "HEALTHGATEDATACORP_11_24_1999-EX-10.1-HOSTING AND MANAGEMENT AGREEMENT (1)",
+        "cuad_category": "Price Restrictions",
+        "product_category": "Payment",
+        "char_length": 203
+      },
+      {
+        "clause_text": "The Minimum Payment consists of the Access Fee of US$300,000 per annum and the Second Component that increases from year to year.",
+        "source_contract": "INTRICONCORP_03_10_2009-EX-10.22-Strategic Alliance Agreement",
+        "cuad_category": "Minimum Commitment",
+        "product_category": "Payment",
+        "char_length": 129
+      },
+      {
+        "clause_text": "In the event that Schoolpop exceeds either of these limits, AEIS shall cease fulfilling Orders from Schoolpop until such time that Schoolpop's inventory returns to an acceptable level based on the established maximums.",
+        "source_contract": "LOYALTYPOINTINC_11_16_2004-EX-10.2-RESELLER AGREEMENT",
+        "cuad_category": "Volume Restriction",
+        "product_category": "Payment",
+        "char_length": 218
+      },
+      {
+        "clause_text": "In consideration of the services rendered pursuant to this Agreement, Integrity shall receive the excess, if any, of the sales price, as set forth in the Fund's Registration Statement, over the net asset value of Shares sold by Integrity, as underwriter.",
+        "source_contract": "IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement",
+        "cuad_category": "Revenue/Profit Sharing",
+        "product_category": "Payment",
+        "char_length": 254
+      },
+      {
+        "clause_text": "To the extent that the Village Media Company and PFHOF work collaboratively on media projects, the EP's services on such projects for the benefit of PFHOF shall be charged to PFHOF at cost without markup.",
+        "source_contract": "GpaqAcquisitionHoldingsInc_20200123_S-4A_EX-10.6_11951677_EX-10.6_License Agreement",
+        "cuad_category": "Price Restrictions",
+        "product_category": "Payment",
+        "char_length": 204
+      },
+      {
+        "clause_text": "You agree to conduct a Grand Opening Advertising Program for the Franchised Business throughout the first four weeks after the Opening Date, spending an amount not less than $12,000.",
+        "source_contract": "PfHospitalityGroupInc_20150923_10-12G_EX-10.1_9266710_EX-10.1_Franchise Agreement1",
+        "cuad_category": "Minimum Commitment",
+        "product_category": "Payment",
+        "char_length": 182
+      },
+      {
+        "clause_text": "LEA shall compensate T&B Personality the sum of [$\u25cf] plus first-class air and hotel accommodations for up to three (3) additional persons for each such appearance.",
+        "source_contract": "LegacyEducationAllianceInc_20200330_10-K_EX-10.18_12090678_EX-10.18_Development Agreement",
+        "cuad_category": "Volume Restriction",
+        "product_category": "Payment",
+        "char_length": 163
+      },
+      {
+        "clause_text": "In addition to the 5% amount calculated pursuant to the preceding paragraph, there shall be an identical 5% amount to be paid from THI, per Premier's consideration, to certain shareholders of Premier, as identified by Premier, as of a record date to be determined in the future, on an annual basis, commencing on the one-year anniversary of this Agreement until a total amount of $40,000,000 has been paid to Premier.",
+        "source_contract": "PREMIERBIOMEDICALINC_05_14_2020-EX-10.2-INTELLECTUAL PROPERTY AGREEMENT",
+        "cuad_category": "Revenue/Profit Sharing",
+        "product_category": "Payment",
+        "char_length": 417
+      },
+      {
+        "clause_text": "No later than 30 days after the end of each contract year the Base Fee must be increased or decreased in accordance with the increase or decrease in the CPI and such increases or decreases will be calculated by using the following formula:",
+        "source_contract": "ELANDIAINTERNATIONALINC_04_25_2007-EX-10.21-Outsourcing Agreement",
+        "cuad_category": "Price Restrictions",
+        "product_category": "Payment",
+        "char_length": 239
+      }
+    ],
+    "Confidentiality": [],
+    "Intellectual Property": [
+      {
+        "clause_text": "Consultant hereby irrevocably assigns to Company all right, title and interest in and to any information (including, without limitation, business plans and/or business information), technology, know-how, materials, notes, records, designs, ideas, inventions, improvements, devices, developments, discoveries, compositions, trade secrets, processes, methods and/or techniques, whether or not patentable or copyrightable, that are conceived, reduced to practice or made by Consultant alone or jointly with others in the course of performing the Services or through the use of Confidential Information (collectively, 111nventions\").",
+        "source_contract": "KIROMICBIOPHARMA,INC_05_11_2020-EX-10.23-CONSULTING AGREEMENT",
+        "cuad_category": "Ip Ownership Assignment",
+        "product_category": "Intellectual Property",
+        "char_length": 629
+      },
+      {
+        "clause_text": "Joint Improvements shall be owned jointly by the Parties, and PPI's interest therein shall be licensed to EKR hereunder.",
+        "source_contract": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT ",
+        "cuad_category": "Joint Ip Ownership",
+        "product_category": "Intellectual Property",
+        "char_length": 120
+      },
+      {
+        "clause_text": "Company hereby appoints Distributor as Company's exclusive distributor within the Market and grants to Distributor the exclusive right to sell and distribute Products within the Market, and Distributor hereby accepts such appointment and such grant, in accordance with the terms and conditions of this Agreement.",
+        "source_contract": "LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT",
+        "cuad_category": "License Grant",
+        "product_category": "Intellectual Property",
+        "char_length": 312
+      },
+      {
+        "clause_text": "Except to Affiliates of Valeant, Valeant's rights and obligations under this Section 2.1 are non-transferable, non-assignable, and non-delegable.",
+        "source_contract": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+        "cuad_category": "Non-Transferable License",
+        "product_category": "Intellectual Property",
+        "char_length": 145
+      },
+      {
+        "clause_text": "Subject to the terms and conditions of this Agreement, Commerce One hereby grants to Corio a fee-bearing, perpetual and irrevocable, nonexclusive, nontransferable (except in accordance with Section 14.1 of this Agreement), right and license in the Territory to",
+        "source_contract": "CORIOINC_07_20_2000-EX-10.5-LICENSE AND HOSTING AGREEMENT",
+        "cuad_category": "Unlimited/All-You-Can-Eat-License",
+        "product_category": "Intellectual Property",
+        "char_length": 260
+      },
+      {
+        "clause_text": "Subject to the terms and conditions of this Agreement, as of the Distribution Date, Nuance hereby grants to SpinCo and the members of the SpinCo Group a worldwide, non-exclusive, fully paid-up, perpetual and irrevocable, transferable (subject to ARTICLE VIII), sublicensable (subject to Section 3.01(g)) license to continue to use any Nuance IP (other than Nuance Patents, Nuance Technology Assets, Nuance Trademarks and Nuance Data), in each case solely as and to the extent that it is used by the SpinCo Group in connection with products and services of the SpinCo Business within the SpinCo Field of Use, together with natural extensions and evolutions thereof.",
+        "source_contract": "CerenceInc_20191002_8-K_EX-10.4_11827494_EX-10.4_Intellectual Property Agreement",
+        "cuad_category": "Irrevocable Or Perpetual License",
+        "product_category": "Intellectual Property",
+        "char_length": 664
+      },
+      {
+        "clause_text": "ENERGOUS hereby grants DIALOG a non-exclusive, non-transferable (except as set forth in Section 2) license under the Product IP to use any of the Deposit Materials released from escrow for the purpose of fixing an Epidemic Defect or other Product design or production issue impacting yield or quality during the Term and, if applicable, any Wind Down Period or Continuing Obligation period, including, but not limited to, authorizing any third party subcontractor to manufacture and supply Products, provided, however, that DIALOG continues to make all Royalty payment owed to ENERGOUS (or the then-current owner of the Product IP) as provided in this Agreement.",
+        "source_contract": "ENERGOUSCORP_03_16_2017-EX-10.24-STRATEGIC ALLIANCE AGREEMENT",
+        "cuad_category": "Source Code Escrow",
+        "product_category": "Intellectual Property",
+        "char_length": 662
+      },
+      {
+        "clause_text": "The Incorporated Technology Works shall be the sole property of On2, and all right, title and interest therein shall vest solely in On2 and shall be deemed to be a work made for hire.",
+        "source_contract": "ON2TECHNOLOGIES,INC_11_17_2006-EX-10.3-SUPPORT AND MAINTENANCE AGREEMENT",
+        "cuad_category": "Ip Ownership Assignment",
+        "product_category": "Intellectual Property",
+        "char_length": 183
+      },
+      {
+        "clause_text": "Upon termination of the Agreement, VerticalNet and Impresse shall jointly own all User Data.",
+        "source_contract": "ImpresseCorp_20000322_S-1A_EX-10.11_5199234_EX-10.11_Co-Branding Agreement",
+        "cuad_category": "Joint Ip Ownership",
+        "product_category": "Intellectual Property",
+        "char_length": 92
+      },
+      {
+        "clause_text": "Subject to the terms and conditions of this Agreement, Google grants to Distributor a limited, [ * ] license during the Term to use the Google Trademarks, in accordance with Google's trademark usage guidelines, solely to market and promote the Products consistent with this Agreement, provided that all use of the Google Trademarks shall be subject to Google's prior review and advance written consent.",
+        "source_contract": "WHITESMOKE,INC_11_08_2011-EX-10.26-PROMOTION AND DISTRIBUTION AGREEMENT",
+        "cuad_category": "License Grant",
+        "product_category": "Intellectual Property",
+        "char_length": 402
+      },
+      {
+        "clause_text": "(ii) to make, have made, use, sell, offer for sale, import, and otherwise dispose of Smart Sensing Network Equipment; and (iii) to make, have made, use, sell, offer for sale, import, and otherwise dispose of Public Safety LTE Smartphone Devices.",
+        "source_contract": "ZEBRATECHNOLOGIESCORP_04_16_2014-EX-10.1-INTELLECTUAL PROPERTY AGREEMENT",
+        "cuad_category": "Non-Transferable License",
+        "product_category": "Intellectual Property",
+        "char_length": 245
+      },
+      {
+        "clause_text": "E.piphany allows for unlimited calls to its technical support desk by the HSNS personnel designated under Section 5.7 (\"HSNS Responsibilities.\")",
+        "source_contract": "OASYSMOBILE,INC_07_05_2001-EX-10.17-OUTSOURCING AGREEMENT",
+        "cuad_category": "Unlimited/All-You-Can-Eat-License",
+        "product_category": "Intellectual Property",
+        "char_length": 144
+      },
+      {
+        "clause_text": "Following the expiration of the Royalty Term with respect to the Licensed Product, the licenses granted under Section 2.1 with respect to such Licensed Product in the Field and the Territory shall be non-exclusive, perpetual, irrevocable, fully-paid and royalty-free.",
+        "source_contract": "CytodynInc_20200109_10-Q_EX-10.5_11941634_EX-10.5_License Agreement",
+        "cuad_category": "Irrevocable Or Perpetual License",
+        "product_category": "Intellectual Property",
+        "char_length": 267
+      },
+      {
+        "clause_text": "Sparkling shall not be entitled to make use of the Codes except as provided in Section (b), provided that Sparkling may itself or by retaining independent experts, examine and test the materials for compliance with the obligations of Garman hereunder.",
+        "source_contract": "SPARKLINGSPRINGWATERHOLDINGSLTD_07_03_2002-EX-10.13-SOFTWARE LICENSE AND MAINTENANCE AGREEMENT",
+        "cuad_category": "Source Code Escrow",
+        "product_category": "Intellectual Property",
+        "char_length": 251
+      },
+      {
+        "clause_text": "THC will assign all right, title and interest in and to the THC ERB Domains (those domains owned by THC related to the ERB that do not incorporate the mark/name HERTZ) as set forth on Schedule H to HERC and as more fully set forth in the Domain Name Assignment attached hereto as Exhibit D.",
+        "source_contract": "HERTZGLOBALHOLDINGS,INC_07_07_2016-EX-10.4-INTELLECTUAL PROPERTY AGREEMENT",
+        "cuad_category": "Ip Ownership Assignment",
+        "product_category": "Intellectual Property",
+        "char_length": 290
+      },
+      {
+        "clause_text": "Subject to the limitations set forth in this Agreement, the Joint IP may be used freely by either Party or its Affiliates and licensed to Third Parties by Conformis and its Affiliates, on the one hand, outside of the Buyer Field or by Stryker and its Affiliates, on the other hand, within the Buyer Field, in each case, without the consent of, or duty to account to or notify, the other Party, but, except with respect to external licenses of the Improved Conformis Background IP by Conformis or its Affiliates to Third Parties, any external Third Party license shall be governed in accordance with the last sentence of Section 4.3(c) of the APA.",
+        "source_contract": "ConformisInc_20191101_10-Q_EX-10.6_11861402_EX-10.6_Development Agreement",
+        "cuad_category": "Joint Ip Ownership",
+        "product_category": "Intellectual Property",
+        "char_length": 646
+      },
+      {
+        "clause_text": "CONSULTANT hereby gives and grants to ADAMS GOLF the exclusive right and license to use CONSULTANT'S ENDORSEMENT in connection with the manufacture, sale, distribution, advertising and promotion of PRODUCT in the CONTRACT TERRITORY.",
+        "source_contract": "ADAMSGOLFINC_03_21_2005-EX-10.17-ENDORSEMENT AGREEMENT",
+        "cuad_category": "License Grant",
+        "product_category": "Intellectual Property",
+        "char_length": 232
+      },
+      {
+        "clause_text": "Notwithstanding anything in this Agreement to the contrary, Licensee has no right to sublicense any rights granted hereunder to any third party, or otherwise permit any third party to use any Licensed Domain Names or Licensed Content; provided, however, that any rights granted to Licensee hereunder shall be sublicensable, without the prior written consent of Licensor, to SINA Leju and Licensee's Affiliates that are controlled by SINA Leju solely for the purpose of operating the Business during the Term.",
+        "source_contract": "ChinaRealEstateInformationCorp_20090929_F-1_EX-10.32_4771615_EX-10.32_Content License Agreement",
+        "cuad_category": "Non-Transferable License",
+        "product_category": "Intellectual Property",
+        "char_length": 508
+      }
+    ],
+    "Liability": [
+      {
+        "clause_text": "Subject to Clauses 9.1 and 9.2, each party's total liability under or in connection with this Agreement (whether in contract, tort or otherwise) arising in any Contract Year is limited to the greater of: (a) [ * ] Euros ([ * ] Euros); and (b) [ * ]% of the total payment due to the Distributor in the relevant Contract Year pursuant to Clause 4 (Payment Terms).",
+        "source_contract": "WHITESMOKE,INC_11_08_2011-EX-10.26-PROMOTION AND DISTRIBUTION AGREEMENT",
+        "cuad_category": "Cap On Liability",
+        "product_category": "Liability",
+        "char_length": 361
+      },
+      {
+        "clause_text": "THE FOREGOING SENTENCE SHALL NOT LIMIT (1) THE OBLIGATIONS OF EITHER PARTY TO INDEMNIFY THE OTHER PARTY FROM AND AGAINST THIRD PARTY CLAIMS UNDER SECTION 11.1 OR 11.2, AS APPLICABLE, OR (2) DAMAGES AVAILABLE FOR A PARTY'S BREACH OF THE CONFIDENTIALITY AND NON-USE OBLIGATIONS IN ARTICLE 9.",
+        "source_contract": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+        "cuad_category": "Uncapped Liability",
+        "product_category": "Liability",
+        "char_length": 289
+      },
+      {
+        "clause_text": "In the event Subcontractor directly employs or contracts with an employee of EDGE without the consent of EDGE, Subcontractor shall pay as liquidated damages two times the then monthly salary of the employee for a three-month period of time.",
+        "source_contract": "FTENETWORKS,INC_02_18_2016-EX-99.4-STRATEGIC ALLIANCE AGREEMENT",
+        "cuad_category": "Liquidated Damages",
+        "product_category": "Liability",
+        "char_length": 240
+      },
+      {
+        "clause_text": "In the event that Company is unable or unwilling to promptly perform any warranty work without reasonable cause and following full and fair opportunity to do so, or in the event of the necessity for emergency repairs of a defective Product for which there is no reasonable possibility of performance by Company, Distributor may perform such warranty work or hire a third party to perform such warranty work and the reasonable cost thereof shall be paid by Company.",
+        "source_contract": "LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT",
+        "cuad_category": "Warranty Duration",
+        "product_category": "Liability",
+        "char_length": 464
+      },
+      {
+        "clause_text": "i-on will not be liable under any circumstances for any lost profits or other consequential damages, even if i-on has been advised as to the possibility of such damages. i-on's liability for damages to the Customer for any cause whatsoever, regardless of the form of action, and whether in contract or in tort, including negligence, shall be limited to one (1) month's fees and the remaining portion of any prepaid fees.",
+        "source_contract": "CENTRACKINTERNATIONALINC_10_29_1999-EX-10.3-WEB SITE HOSTING AGREEMENT",
+        "cuad_category": "Cap On Liability",
+        "product_category": "Liability",
+        "char_length": 420
+      },
+      {
+        "clause_text": "however that such limitation shall not apply to the extent that EKR or any EKR Indemnified Party is required to pay in excess of such amount to a third party in respect of a final judgment or order obtained by the third party or as a result of PPI's breach of Section 7.2.12 of the Supply Agreement.",
+        "source_contract": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT ",
+        "cuad_category": "Uncapped Liability",
+        "product_category": "Liability",
+        "char_length": 299
+      },
+      {
+        "clause_text": "In the event the Closing fails to occur, then, only upon entry of a final and non-appealable order of the Bankruptcy Court determining that such failure was the result of Purchaser's sole, material, non-excusable breach of this Agreement, then Merchant shall be entitled to retain the Deposit as liquidated damages as Merchant's sole remedy for such breach.",
+        "source_contract": "BONTONSTORESINC_04_20_2018-EX-99.3-AGENCY AGREEMENT",
+        "cuad_category": "Liquidated Damages",
+        "product_category": "Liability",
+        "char_length": 357
+      },
+      {
+        "clause_text": "Within 7 days after the arrival of the goods at destination, should the quality, specification, or quantity be found not in conformity with the stipulations of the Contract except those claims for which the insurance company or the owners of the vessel are liable, the Buyers, on the strength of the Inspection Certificate issued by the China Commodity Inspection Bureau, have the right to claim for replacement with new goods, or for compensation, and all the expenses (such as inspection charges, freight for returning the goods and for sending the replacement, insurance premium, storage and loading and unloading charges etc.) shall be borne by the Sellers.",
+        "source_contract": "LohaCompanyltd_20191209_F-1_EX-10.16_11917878_EX-10.16_Supply Agreement",
+        "cuad_category": "Warranty Duration",
+        "product_category": "Liability",
+        "char_length": 661
+      },
+      {
+        "clause_text": "Notwithstanding the provisions of this subsection (d), no Remarketing Agent shall be required to contribute any amount in excess of the amount by which the total price at which the applicable Securities remarketed by it and distributed to the public were offered to the public exceeds the amount of any damages which such Remarketing Agent has otherwise been required to pay by reason of such untrue or alleged untrue statement or omission or alleged omission.",
+        "source_contract": "MetLife, Inc. - Remarketing Agreement",
+        "cuad_category": "Cap On Liability",
+        "product_category": "Liability",
+        "char_length": 460
+      },
+      {
+        "clause_text": "Notwithstanding the preceding sentences, this Subsection will not limit the liability of a Party for any amount or type of damages for: (1) the defense and indemnification of an Indemnified Claim on which the Party is the Indemnifying Party; (2) infringement by the Party on the intellectual property of the other Party; (3) the unauthorized disclosure or use by the Party of the Confidential Information of the other Party; (4) payment or reimbursement of any amount expressly required to be paid or reimbursed by the Party under a provision of this Agreement; or (5) the intentional misconduct of the Party in violation of Applicable Laws.",
+        "source_contract": "ReynoldsConsumerProductsInc_20191115_S-1_EX-10.18_11896469_EX-10.18_Supply Agreement",
+        "cuad_category": "Uncapped Liability",
+        "product_category": "Liability",
+        "char_length": 641
+      },
+      {
+        "clause_text": "The amounts contemplated under Section 16.4 [Liquidated Damages] above is not a penalty and is intended by the parties only as a compensatory remedy for past breaches and not as a preventative remedy to deter future breaches.",
+        "source_contract": "PfHospitalityGroupInc_20150923_10-12G_EX-10.1_9266710_EX-10.1_Franchise Agreement1",
+        "cuad_category": "Liquidated Damages",
+        "product_category": "Liability",
+        "char_length": 225
+      },
+      {
+        "clause_text": "Commerce One will replace any defective media returned to Commerce One during the Warranty Period.",
+        "source_contract": "CORIOINC_07_20_2000-EX-10.5-LICENSE AND HOSTING AGREEMENT",
+        "cuad_category": "Warranty Duration",
+        "product_category": "Liability",
+        "char_length": 98
+      },
+      {
+        "clause_text": "Without limiting the terms set forth in Section 6.09 of the Separation Agreement, none of Nuance, SpinCo or any other member of either Group shall in any event have any Liability to the other or to any other member of the other's Group under this Agreement for any indirect, special, punitive or consequential damages, whether or not caused by or resulting from negligence or breach of obligations hereunder and whether or not informed of the possibility of the existence of such damages.",
+        "source_contract": "CerenceInc_20191002_8-K_EX-10.4_11827494_EX-10.4_Intellectual Property Agreement",
+        "cuad_category": "Cap On Liability",
+        "product_category": "Liability",
+        "char_length": 488
+      },
+      {
+        "clause_text": "Subject to the foregoing as wen as Mobimagic's obligations under this Agreement, Mobimagic shall not in any manner be held or be responsible or liable for any unforeseen contingency, claims, liabilities, demands. losses, damages or expenses arising due to absence of storage or retention of any PC Financial data which shall be the sole responsibility of PC Financial .",
+        "source_contract": "OPERALTD_04_30_2020-EX-4.14-SERVICE AGREEMENT",
+        "cuad_category": "Uncapped Liability",
+        "product_category": "Liability",
+        "char_length": 369
+      },
+      {
+        "clause_text": "Except as otherwise agreed hereunder, if Party A or its subsidiaries fail to pay the Service Fee in full on schedule according to provisions of Article 4.1 and Article 4.2, then Party A or its subsidiaries shall, in addition to the continuance of the payment of Service Fee in full, it shall pay Party B the liquidated damages at a daily interest rate of 0.03% in respect of the outstanding Service Fee.",
+        "source_contract": "TUNIUCORP_03_06_2014-EX-10-COOPERATION AGREEMENT",
+        "cuad_category": "Liquidated Damages",
+        "product_category": "Liability",
+        "char_length": 403
+      },
+      {
+        "clause_text": "The above warranties are valid for a period of [***] from the date of shipment of any Licensed Product to any customer.",
+        "source_contract": "ENERGOUSCORP_03_16_2017-EX-10.24-STRATEGIC ALLIANCE AGREEMENT",
+        "cuad_category": "Warranty Duration",
+        "product_category": "Liability",
+        "char_length": 119
+      },
+      {
+        "clause_text": "IntriCon is not liable in any way to Dynamic Hearing for any indirect, consequential, third party, special or incidental harm, liability, expense, cost, loss or damage, loss of profits, loss of data, exemplary damages or any other indirect commercial or economic loss of any kind whatsoever incurred by Dynamic Hearing whether in negligence, tort, equity, contract or otherwise, arising in connection with this Agreement;",
+        "source_contract": "INTRICONCORP_03_10_2009-EX-10.22-Strategic Alliance Agreement",
+        "cuad_category": "Cap On Liability",
+        "product_category": "Liability",
+        "char_length": 421
+      },
+      {
+        "clause_text": "EXCEPT FOR A PARTY'S OBLIGATIONS SET FORTH IN THIS ARTICLE 13, AND ANY BREACH OF ARTICLE 10 (CONFIDENTIALITY), IN NO EVENT WILL EITHER PARTY BE LIABLE TO THE OTHER PARTY (OR THE OTHER PARTY'S AFFILIATES OR SUBLICENSEES) IN CONNECTION WITH THIS AGREEMENT FOR LOST REVENUE, LOST PROFITS, LOST ROYALTIES, LOST SAVINGS, LOSS OF USE, DAMAGE TO GOODWILL, OR ANY CONSEQUENTIAL, INCIDENTAL, SPECIAL, EXEMPLARY, PUNITIVE OR INDIRECT DAMAGES IN CONNECTION WITH THIS AGREEMENT, HOWEVER CAUSED, UNDER ANY THEORY OF LIABILITY, INCLUDING CONTRACT, NEGLIGENCE, OR STRICT LIABILITY, EVEN IF THAT PARTY HAS BEEN PLACED ON NOTICE OF THE POSSIBILITY OF SUCH DAMAGES.",
+        "source_contract": "CytodynInc_20200109_10-Q_EX-10.5_11941634_EX-10.5_License Agreement",
+        "cuad_category": "Uncapped Liability",
+        "product_category": "Liability",
+        "char_length": 647
+      }
+    ],
+    "Indemnity": [
+      {
+        "clause_text": "Subject to Clauses 9.1 and 9.2, neither party shall be liable under this Agreement (whether in contract, tort or otherwise) for any: (a) loss of anticipated savings; (b) loss of business opportunity (which for the avoidance of doubt shall not include loss of advertising revenue); (c) loss of or corruption of data; (d) loss or damage resulting from third party claims; or (e) indirect or consequential losses; suffered or incurred by the other party (whether or not such losses were within the contemplation of the parties at the date of this Agreement).",
+        "source_contract": "WHITESMOKE,INC_11_08_2011-EX-10.26-PROMOTION AND DISTRIBUTION AGREEMENT",
+        "cuad_category": "Uncapped Liability",
+        "product_category": "Indemnity",
+        "char_length": 555
+      },
+      {
+        "clause_text": "Company will carry a reasonable amount of product liability insurance through a reasonably acceptable products liability insurance company and will name the Distributor as an additional insured under that policy. Company will make reasonable efforts to procure a policy, which is non-cancelable, except upon thirty (30) days, advance notice to the Distributor.",
+        "source_contract": "LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT",
+        "cuad_category": "Insurance",
+        "product_category": "Indemnity",
+        "char_length": 360
+      },
+      {
+        "clause_text": "THE FOREGOING SENTENCE SHALL NOT LIMIT (1) THE OBLIGATIONS OF EITHER PARTY TO INDEMNIFY THE OTHER PARTY FROM AND AGAINST THIRD PARTY CLAIMS UNDER SECTION 11.1 OR 11.2, AS APPLICABLE, OR (2) DAMAGES AVAILABLE FOR A PARTY'S BREACH OF THE CONFIDENTIALITY AND NON-USE OBLIGATIONS IN ARTICLE 9.",
+        "source_contract": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+        "cuad_category": "Uncapped Liability",
+        "product_category": "Indemnity",
+        "char_length": 289
+      },
+      {
+        "clause_text": "To be covered by the Seller for 110% invoice value against All Risks and War Risk.",
+        "source_contract": "LohaCompanyltd_20191209_F-1_EX-10.16_11917878_EX-10.16_Supply Agreement",
+        "cuad_category": "Insurance",
+        "product_category": "Indemnity",
+        "char_length": 82
+      },
+      {
+        "clause_text": "however that such limitation shall not apply to the extent that EKR or any EKR Indemnified Party is required to pay in excess of such amount to a third party in respect of a final judgment or order obtained by the third party or as a result of PPI's breach of Section 7.2.12 of the Supply Agreement.",
+        "source_contract": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT ",
+        "cuad_category": "Uncapped Liability",
+        "product_category": "Indemnity",
+        "char_length": 299
+      },
+      {
+        "clause_text": "Each Significant Subsidiary that is required to be organized or licensed as an insurance company in its jurisdiction of incorporation (each, an \"Insurance Subsidiary\" and collectively, the \"Insurance Subsidiaries\") is licensed",
+        "source_contract": "MetLife, Inc. - Remarketing Agreement",
+        "cuad_category": "Insurance",
+        "product_category": "Indemnity",
+        "char_length": 226
+      },
+      {
+        "clause_text": "Notwithstanding the preceding sentences, this Subsection will not limit the liability of a Party for any amount or type of damages for: (1) the defense and indemnification of an Indemnified Claim on which the Party is the Indemnifying Party; (2) infringement by the Party on the intellectual property of the other Party; (3) the unauthorized disclosure or use by the Party of the Confidential Information of the other Party; (4) payment or reimbursement of any amount expressly required to be paid or reimbursed by the Party under a provision of this Agreement; or (5) the intentional misconduct of the Party in violation of Applicable Laws.",
+        "source_contract": "ReynoldsConsumerProductsInc_20191115_S-1_EX-10.18_11896469_EX-10.18_Supply Agreement",
+        "cuad_category": "Uncapped Liability",
+        "product_category": "Indemnity",
+        "char_length": 641
+      },
+      {
+        "clause_text": "Commercial General Liability Insurance providing the limits of coverage written on an occurrence basis, in no event less than $1,000,000 combined single limit and $2,000,000 in the aggregate for personal and bodily injury and death arising therefrom and Broad Form property damage arising out of any one occurrence in connection with the Work or any part thereof, which insurance shall include coverage with the same minimum limits for contractual liability and completed operations liability.",
+        "source_contract": "FTENETWORKS,INC_02_18_2016-EX-99.4-STRATEGIC ALLIANCE AGREEMENT",
+        "cuad_category": "Insurance",
+        "product_category": "Indemnity",
+        "char_length": 493
+      },
+      {
+        "clause_text": "EXCEPT IN THE CASE OF (a) ANY BREACH OF SECTION 10 (CONFIDENTIALITY), (b) THE PARTIES' OBLIGATIONS UNDER SECTION 12 (INDEMNIFICATION), (c) A PARTY'S GROSS NEGLIGENCE OR WILLFUL MISCONDUCT, OR (d) LIABILITY ARISING FROM EPIDEMIC DEFECTS (WHICH WILL BE SUBJECT TO THE LIMITATION SET FORTH IN SECTION 11.2(d)), IN NO EVENT WILL EITHER PARTY BE LIABLE UNDER THIS AGREEMENT, REGARDLESS OF THE FORM OF ANY CLAIM OR ACTION (WHETHER IN CONTRACT, NEGLIGENCE, STRICT LIABILITY OR OTHERWISE), FOR ANY (i) INDIRECT, PUNITIVE, INCIDENTAL, RELIANCE, SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES, INCLUDING, BUT NOT LIMITED TO, LOSS OF BUSINESS, REVENUES, PROFITS OR GOODWILL, OR (ii) AGGREGATE DAMAGES IN EXCESS OF [***].",
+        "source_contract": "ENERGOUSCORP_03_16_2017-EX-10.24-STRATEGIC ALLIANCE AGREEMENT",
+        "cuad_category": "Uncapped Liability",
+        "product_category": "Indemnity",
+        "char_length": 706
+      },
+      {
+        "clause_text": "Until the Designation Rights Termination Date or as otherwise directed by Purchaser or set forth in this Agreement, Merchant shall continue to maintain, subject to the Wind-Down Budget and the Wind-Down Cap, in such amounts as it currently has in effect, all of its liability insurance policies, including but not limited to commercial general liability, products liability, comprehensive public liability, auto liability and umbrella liability insurance, covering injuries to persons and property in, or in connection with, the Assets and/or Merchant's operation of its business and the Store and Distribution Centers; and Merchant shall cause Purchaser to be named as an additional named insured (as its interest may appear) with respect to all such policies.",
+        "source_contract": "BONTONSTORESINC_04_20_2018-EX-99.3-AGENCY AGREEMENT",
+        "cuad_category": "Insurance",
+        "product_category": "Indemnity",
+        "char_length": 761
+      },
+      {
+        "clause_text": "Except for claims under Sections 9.4 [INDEMNIFICATION BY IMPRESSE] and 9.5 [INDEMNIFICATION BY VERTICALNET]",
+        "source_contract": "ImpresseCorp_20000322_S-1A_EX-10.11_5199234_EX-10.11_Co-Branding Agreement",
+        "cuad_category": "Uncapped Liability",
+        "product_category": "Indemnity",
+        "char_length": 107
+      },
+      {
+        "clause_text": "The Venture may acquire insurance on behalf of any Member, employee, agent or other person engaged in the business interest of the Venture against any liability asserted against them or incurred by them while acting in good faith on behalf of the Venture.",
+        "source_contract": "BORROWMONEYCOM,INC_06_11_2020-EX-10.1-JOINT VENTURE AGREEMENT",
+        "cuad_category": "Insurance",
+        "product_category": "Indemnity",
+        "char_length": 255
+      },
+      {
+        "clause_text": "EXCEPT IN CASES OF GROSS NEGLIGENCE, WILLFUL MISCONDUCT OR FRAUD, INDEMNIFICATION CLAIMS UNDER SECTION 5 OR BREACHES OF SECTION 2 (TRADEMARKS), 8 (CONFIDENTIALITY), OR 9 (NO AGENCY RELATIONSHIP), IN NO EVENT SHALL EITHER PARTY OR ITS OFFICERS, DIRECTORS, OR EMPLOYEES BE LIABLE TO THE OTHER PARTY IN CONNECTION WITH THE SUBJECT MATTER HEREOF, FOR ANY SPECIAL, INDIRECT, CONSEQUENTIAL OR PUNITIVE DAMAGES OF ANY KIND, LOST PROFITS OR LOST REVENUE, WHETHER ARISING IN CONTRACT, TORT, NEGLIGENCE, STATUTE, OR OTHERWISE, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.",
+        "source_contract": "AlliedEsportsEntertainmentInc_20190815_8-K_EX-10.19_11788293_EX-10.19_Content License Agreement",
+        "cuad_category": "Uncapped Liability",
+        "product_category": "Indemnity",
+        "char_length": 560
+      },
+      {
+        "clause_text": "HERC shall provide for ten (10) days notice to THC and HSI in the event of any modification, cancellation or termination.",
+        "source_contract": "HERTZGLOBALHOLDINGS,INC_07_07_2016-EX-10.4-INTELLECTUAL PROPERTY AGREEMENT",
+        "cuad_category": "Insurance",
+        "product_category": "Indemnity",
+        "char_length": 121
+      },
+      {
+        "clause_text": "EXCEPT FOR AMOUNTS PAYABLE TO THIRD PARTIES IN CONNECTION WITH CLAIMS SUBJECT TO THE INDEMNIFICATION PROVISIONS OF SECTION 9.1 OR A BREACH OF EITHER PARTY'S OBLIGATIONS UNDER SECTION 5 (CONFIDENTIALITY), NEITHER PARTY WILL, UNDER ANY CIRCUMSTANCES, BE LIABLE TO THE OTHER PARTY FOR ANY LOST PROFITS OR ANY OTHER SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR RELATING TO THIS AGREEMENT EVEN IF THE PARTY HAS BEEN NOTIFIED OF THE POSSIBILITY OF SUCH DAMAGES.",
+        "source_contract": "LegacyEducationAllianceInc_20200330_10-K_EX-10.18_12090678_EX-10.18_Development Agreement",
+        "cuad_category": "Uncapped Liability",
+        "product_category": "Indemnity",
+        "char_length": 471
+      },
+      {
+        "clause_text": "Throughout the entire Term, you must maintain such types of insurance, in such amounts, as we may require.",
+        "source_contract": "PfHospitalityGroupInc_20150923_10-12G_EX-10.1_9266710_EX-10.1_Franchise Agreement1",
+        "cuad_category": "Insurance",
+        "product_category": "Indemnity",
+        "char_length": 106
+      },
+      {
+        "clause_text": "Except in the event of (i) Third Party Claims subject to a Party's indemnification obligations pursuant to Section 10.1, (ii) Third Party Claims subject to a Party's indemnification obligations pursuant to Section 10.2, (iii) the gross negligence, fraud or willful misconduct of a Party or its Personnel, (iv) a Party's willful breach of this Agreement, (v) a breach of Section 13 or (vi) customer liabilities pursuant to, and subject to the limitations set forth in, Section 2.5(e), neither Party's aggregate liability to the other Party (or its Personnel that are indemnitees under Section 10.1 or Section 10.2, as applicable) under this Agreement for the initial twelve (12) month period immediately following the Effective Date, and for any twelve (12) month period thereafter during the Term, shall exceed, on a cumulative basis, the amount that is one and one half (11\u22152) times the aggregate amounts paid or payable pursuant to this Agreement in the preceding twelve (12) month period preceding the loss date by Customer to Manufacturer but solely with respect to the supply hereunder of Product (or Products) for which such corresponding liability arose (the \"Affected Products\") and not any other Products (or if, as of the time the liability arises, this Agreement has not been in effect for twelve (12) months, then the amounts paid or payable by Customer to Manufacturer hereunder during the period from the Effective Date until such time the liability arises, shall be annualized to a full twelve (12) months but solely with respect to the supply hereunder of the Affected Product(s) and not any other Products).",
+        "source_contract": "UpjohnInc_20200121_10-12G_EX-2.6_11948692_EX-2.6_Manufacturing Agreement_ Supply Agreement",
+        "cuad_category": "Uncapped Liability",
+        "product_category": "Indemnity",
+        "char_length": 1624
+      },
+      {
+        "clause_text": "Schoolpop shall, during the term of this Agreement, at its own cost and expense, procure with sound and reputable insurers, the following insurance coverage's: (i) Workers' Compensation Insurance in an amount not less than the statutory limits for the state(s), country or province in where the services are to be performed; (ii) Employer's Liability Insurance not less than (a) $100,000 per occurrence, and not less than $100,000 aggregate limit of liability per policy year for disease, including death at any time resulting therefrom, not caused by accident or (b) such amount as required by law, whichever is higher; (iii) Comprehensive General Liability Insurance, including blanket extended coverage against all hazards, including personal injury and death resulting therefrom, for not less than $1,000,000 per occurrence, and not less than $2,000,000 aggregate; (iv) Automobile Liability insurance against liability arising from the maintenance or use of all owned, non-owned and hired automobiles and trucks used to provide services, with (a) a minimum limit of liability for bodily injury of $1,000,000 in the aggregate, and with a minimum limit of liability for property damage of $500,000 per accident, or (b) amount as required by law, whichever is higher; and (v) fidelity or crime policy of not less than $3,000,000 in the aggregate against misappropriation and/or destruction of Cards.",
+        "source_contract": "LOYALTYPOINTINC_11_16_2004-EX-10.2-RESELLER AGREEMENT",
+        "cuad_category": "Insurance",
+        "product_category": "Indemnity",
+        "char_length": 1400
+      }
+    ],
+    "Governing Law": [
+      {
+        "clause_text": "This Agreement is to be construed according to the laws of the State of Illinois.",
+        "source_contract": "LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 81
+      },
+      {
+        "clause_text": "This Agreement is governed by English law and the parties submit to the exclusive jurisdiction of the English courts in relation to any dispute (contractual or non-contractual) concerning this Agreement save that either party may apply to any court for an injunction or other relief to protect its Intellectual Property Rights.",
+        "source_contract": "WHITESMOKE,INC_11_08_2011-EX-10.26-PROMOTION AND DISTRIBUTION AGREEMENT",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 327
+      },
+      {
+        "clause_text": "It will be governed by the law of the People's Republic of China ,otherwise it is governed by United Nations Convention on Contract for the International Sale of Goods.",
+        "source_contract": "LohaCompanyltd_20191209_F-1_EX-10.16_11917878_EX-10.16_Supply Agreement",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 168
+      },
+      {
+        "clause_text": "This Agreement was entered into in the State of Florida, and its validity, construction, interpretation, and legal effect shall be governed by the laws and judicial decisions of the State of Florida applicable to contracts entered into and performed entirely within the State of Florida.",
+        "source_contract": "CENTRACKINTERNATIONALINC_10_29_1999-EX-10.3-WEB SITE HOSTING AGREEMENT",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 287
+      },
+      {
+        "clause_text": "This Agreement shall be governed and construed according to the laws of the State of Kansas.",
+        "source_contract": "ADAMSGOLFINC_03_21_2005-EX-10.17-ENDORSEMENT AGREEMENT",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 92
+      },
+      {
+        "clause_text": "This Agreement shall be governed by the laws of the State of Texas, without reference to its conflicts of law principles.",
+        "source_contract": "KIROMICBIOPHARMA,INC_05_11_2020-EX-10.23-CONSULTING AGREEMENT",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 121
+      },
+      {
+        "clause_text": "This Amendment shall be governed by and construed in accordance with the laws of Japan.",
+        "source_contract": "VEONEER,INC_02_21_2020-EX-10.11-JOINT VENTURE AGREEMENT",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 87
+      },
+      {
+        "clause_text": "This Agreement and any and all matters arising directly or indirectly herefrom shall be governed by and construed and enforced in accordance with the internal laws of the [***] applicable to agreements made and to be performed entirely in such state, including its statutes of limitation but without giving effect to the conflict of law principles thereof.",
+        "source_contract": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 356
+      },
+      {
+        "clause_text": "This Agreement and the relationship between the Parties shall be governed by, and interpreted in accordance with New York law without regard to provisions related to conflicts of laws, and, except as provided in Section 21.2 above, the Parties agree to submit any dispute to the exclusive jurisdiction of the federal and state courts sitting in New York.",
+        "source_contract": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT ",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 354
+      },
+      {
+        "clause_text": "THIS REMARKETING AGREEMENT AND THE PRICING AGREEMENT SHALL BE GOVERNED BY AND CONSTRUED IN ACCORDANCE WITH THE LAWS OF THE STATE OF NEW YORK, WITHOUT REGARD TO PRINCIPLES OF CONFLICTS OF LAW TO THE EXTENT THAT SUCH PRINCIPLES WOULD REQUIRE OR PERMIT THE APPLICATION OF LAWS OF ANOTHER JURISDICTION.",
+        "source_contract": "MetLife, Inc. - Remarketing Agreement",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 298
+      },
+      {
+        "clause_text": "The construction, interpretation, and performance of this Agreement and all transactions under it shall be governed by the laws of the State of Texas, irrespective of its conflict of law principles.",
+        "source_contract": "FTENETWORKS,INC_02_18_2016-EX-99.4-STRATEGIC ALLIANCE AGREEMENT",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 198
+      },
+      {
+        "clause_text": "This Agreement shall be construed and enforced and interpreted in accordance with and governed by the laws of the Commonwealth of Massachusetts without reference to principles of conflicts of law.",
+        "source_contract": "DOMINIADVISORTRUST_02_18_2005-EX-99.(H)(2)-SPONSORSHIP AGREEMENT",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 196
+      },
+      {
+        "clause_text": "Any disputes relating to, arising out of or resulting from this Agreement, including to its execution, performance, or enforcement, shall be governed by, and construed in accordance with, the Laws of the State of Delaware, regardless of the Laws that might otherwise govern under applicable principles of conflicts of Laws thereof.",
+        "source_contract": "CerenceInc_20191002_8-K_EX-10.4_11827494_EX-10.4_Intellectual Property Agreement",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 331
+      },
+      {
+        "clause_text": "This Agreement and all claims or causes of action arising out of or related to this Agreement shall be governed in all respects, including as to validity, interpretation and effect, by the laws of the State of Illinois and the United States of America, without giving effect to its principles or rules of conflict of laws.",
+        "source_contract": "ReynoldsConsumerProductsInc_20191115_S-1_EX-10.18_11896469_EX-10.18_Supply Agreement",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 322
+      },
+      {
+        "clause_text": "This Agreement shall be construed in accordance with the laws of the State of Kansas.",
+        "source_contract": "IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 85
+      },
+      {
+        "clause_text": "This Agreement and the rights of the Parties hereunder shall be governed by and construed in accordance with the laws of the Commonwealth of Pennsylvania including all matters of construction, validity, performance, and enforcement and without giving effect to the principles of conflict of laws.",
+        "source_contract": "PREMIERBIOMEDICALINC_05_14_2020-EX-10.2-INTELLECTUAL PROPERTY AGREEMENT",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 296
+      },
+      {
+        "clause_text": "This Agreement is entered into in the State of Texas and shall be interpreted according to the laws of the State of Texas.",
+        "source_contract": "SIBANNAC,INC_12_04_2017-EX-2.1-Strategic Alliance Agreement",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 122
+      },
+      {
+        "clause_text": "This Agreement is governed by the laws of Victoria, Australia and the parties submit to the jurisdiction of the courts of Victoria, Australia",
+        "source_contract": "INTRICONCORP_03_10_2009-EX-10.22-Strategic Alliance Agreement",
+        "cuad_category": "Governing Law",
+        "product_category": "Governing Law",
+        "char_length": 141
+      }
+    ]
+  },
+  "clauses": [
+    {
+      "clause_text": "Either party may terminate this Agreement without cause at any time effective upon thirty (30) days' written notice.",
+      "source_contract": "CENTRACKINTERNATIONALINC_10_29_1999-EX-10.3-WEB SITE HOSTING AGREEMENT",
+      "cuad_category": "Termination For Convenience",
+      "product_category": "Termination",
+      "char_length": 116
+    },
+    {
+      "clause_text": "Notwithstanding the foregoing, this Agreement can be terminated by EKR at the end of the Initial Term by delivery of written notice to PPI at least one hundred eighty (180) days prior to the end of the Initial Term or any renewal term.",
+      "source_contract": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT ",
+      "cuad_category": "Notice Period To Terminate Renewal",
+      "product_category": "Termination",
+      "char_length": 235
+    },
+    {
+      "clause_text": "If Distributor complies with all of the terms of this Agreement, the Agreement shall be renewable on an annual basis for one (1) year terms for up to another ten (10) years on the same terms and conditions as set forth herein.",
+      "source_contract": "LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT",
+      "cuad_category": "Renewal Term",
+      "product_category": "Termination",
+      "char_length": 226
+    },
+    {
+      "clause_text": "Upon the termination of this Agreement, or upon Company's earlier requests, Consultant will deliver to Company all property relating to, and all tangible embodiments of, Inventions in Consultant's possession or control.",
+      "source_contract": "KIROMICBIOPHARMA,INC_05_11_2020-EX-10.23-CONSULTING AGREEMENT",
+      "cuad_category": "Post-Termination Services",
+      "product_category": "Termination",
+      "char_length": 219
+    },
+    {
+      "clause_text": "Either Party shall have the right to terminate this Agreement before the end of the Term for its convenience upon [***] written notice to the other Party (and any such termination shall become effective at the end of such [***]); [***].",
+      "source_contract": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+      "cuad_category": "Termination For Convenience",
+      "product_category": "Termination",
+      "char_length": 236
+    },
+    {
+      "clause_text": "After the Initial Term, this Agreement shall continue on a month to month basis until terminated by either party upon thirty (30) days prior written notice to the other setting forth the effective date of such termination.",
+      "source_contract": "FTENETWORKS,INC_02_18_2016-EX-99.4-STRATEGIC ALLIANCE AGREEMENT",
+      "cuad_category": "Notice Period To Terminate Renewal",
+      "product_category": "Termination",
+      "char_length": 222
+    },
+    {
+      "clause_text": "This Agreement shall continue until January 18, 2022, and thereafter shall continue automatically for successive annual periods ending on January 18th of each year, provided such continuance is specifically approved at least annually by (a) the Fund's Board of Trustees and (b) a vote of a majority (as defined in the 1940 Act) of the Fund's Trustees who are not interested persons (as defined in the 1940 Act) of the Fund and who have no direct or indirect financial interest in the operation of the Plan, in this Agreement, or any agreement related to the Plan (the \"Qualified Trustees\"), by vote cast in person at a meeting called for the purpose of voting on such approval.",
+      "source_contract": "IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement",
+      "cuad_category": "Renewal Term",
+      "product_category": "Termination",
+      "char_length": 677
+    },
+    {
+      "clause_text": "(a) such inspection, copying or audit must only be made after at least one Business Day's written notice; (b) such audit must not unreasonably interfere with the day to day operations of IntriCon; and (c) such audit must be at Dynamic Hearing's expense unless the auditor finds an underpayment royalty due under this Agreement in excess of 5% in which case IntriCon must reimburse Dynamic Hearing's reasonable cost of such audit; and (d) Audits will be limited to one audit in any calendar year.",
+      "source_contract": "INTRICONCORP_03_10_2009-EX-10.22-Strategic Alliance Agreement",
+      "cuad_category": "Post-Termination Services",
+      "product_category": "Termination",
+      "char_length": 495
+    },
+    {
+      "clause_text": "This Agreement may be terminated at any time, without the payment of any penalty, with respect to any series or the Trust, by the Board of Trustees of the Trust, or by the Sponsor, in each case on not less than 60 days' written notice to the other party.",
+      "source_contract": "DOMINIADVISORTRUST_02_18_2005-EX-99.(H)(2)-SPONSORSHIP AGREEMENT",
+      "cuad_category": "Termination For Convenience",
+      "product_category": "Termination",
+      "char_length": 254
+    },
+    {
+      "clause_text": "The term of this Agreement is twelve (12) months from the date hereof, and will be automatically renewed for one (1) additional twelve month period unless either party shall notify the other in writing of its intention not to renew. Such notice must be given ninety (90) days prior to expiration of the original term.",
+      "source_contract": "SIBANNAC,INC_12_04_2017-EX-2.1-Strategic Alliance Agreement",
+      "cuad_category": "Notice Period To Terminate Renewal",
+      "product_category": "Termination",
+      "char_length": 317
+    },
+    {
+      "clause_text": "4.7 Data protection. Each Party agrees to comply with all applicable data protection and privacy laws arising from its obligations, if any, under the Agreement and to reasonably co-operate with the other Party in order to allow the other Party to comply with any laws as deemed necessary from time to time. Each Party shall treat all data, information relating to Services, including but not limit to the customer personal data, as confidential. Each party warrants that it shall take appropriate technical and organizational measures against unauthorized or unlaw",
+      "source_contract": "OPERALTD_04_30_2020-EX-4.14-SERVICE AGREEMENT",
+      "cuad_category": "Renewal Term",
+      "product_category": "Termination",
+      "char_length": 564
+    },
+    {
+      "clause_text": "To the extent that there is Merchandise remaining at the Sale Termination Date (the \"Remaining Merchandise\"), such Remaining Merchandise shall be deemed automatically transferred to Agent free and clear of all liens, claims, and encumbrances. Agent and its affiliates shall be authorized to sell or otherwise dispose of the Remaining Merchandise with all logos, brand names, and other Intellectual Property intact, and shall be authorized to advertise the sale of the Remaining Merchandise using the Intellectual Property.",
+      "source_contract": "BONTONSTORESINC_04_20_2018-EX-99.3-AGENCY AGREEMENT",
+      "cuad_category": "Post-Termination Services",
+      "product_category": "Termination",
+      "char_length": 522
+    },
+    {
+      "clause_text": "This Agreement may be terminated by Nuance at any time, in its sole discretion, prior to the Distribution; provided, however, that this Agreement shall automatically terminate upon the termination of the Separation Agreement in accordance with its terms.",
+      "source_contract": "CerenceInc_20191002_8-K_EX-10.4_11827494_EX-10.4_Intellectual Property Agreement",
+      "cuad_category": "Termination For Convenience",
+      "product_category": "Termination",
+      "char_length": 254
+    },
+    {
+      "clause_text": "Thereafter, this Agreement shall automatically renew for subsequent one (1) year periods unless either party provides the other party with written notification at least thirty (30) days prior to the expiration of the initial five (5) year term or any one (1) year renewal thereof of its intention to terminate this Agreement.",
+      "source_contract": "CORIOINC_07_20_2000-EX-10.5-LICENSE AND HOSTING AGREEMENT",
+      "cuad_category": "Notice Period To Terminate Renewal",
+      "product_category": "Termination",
+      "char_length": 325
+    },
+    {
+      "clause_text": "When this Agreement expires, you will have the option to continue the franchise relationship with us for two (2) additional terms of ten (10) years each.",
+      "source_contract": "PfHospitalityGroupInc_20150923_10-12G_EX-10.1_9266710_EX-10.1_Franchise Agreement1",
+      "cuad_category": "Renewal Term",
+      "product_category": "Termination",
+      "char_length": 153
+    },
+    {
+      "clause_text": "Upon termination (but not expiration) of this Agreement for any reason, Licensee shall be entitled to use the Licensed Domain Names and Licensed Content for a limited period of time, not to exceed ninety (90) days, during which it shall diligently work to transition to another solution.",
+      "source_contract": "ChinaRealEstateInformationCorp_20090929_F-1_EX-10.32_4771615_EX-10.32_Content License Agreement",
+      "cuad_category": "Post-Termination Services",
+      "product_category": "Termination",
+      "char_length": 287
+    },
+    {
+      "clause_text": "Company at its sole discretion may at any time alter or cease providing the Customer Service which it has agreed to provide to Client relating to Client Website pursuant to this Agreement without any liability to Company.",
+      "source_contract": "Freecook_20180605_S-1_EX-10.3_11233807_EX-10.3_Hosting Agreement",
+      "cuad_category": "Termination For Convenience",
+      "product_category": "Termination",
+      "char_length": 221
+    },
+    {
+      "clause_text": "Following the Initial Term, either Party may terminate this Agreement without cause upon written notice to the other Party of at least 3 months.",
+      "source_contract": "HealthcareIntegratedTechnologiesInc_20190812_8-K_EX-10.1_11776966_EX-10.1_Reseller Agreement",
+      "cuad_category": "Notice Period To Terminate Renewal",
+      "product_category": "Termination",
+      "char_length": 144
+    },
+    {
+      "clause_text": "Commencing with the Calendar Quarter commencing on October 1, 2018, as consideration for the Valeant Activities performed by Valeant, Dova shall pay Valeant a promotion fee based on annual Net Sales during the Term, calculated as follows: (a) For any portion of Net Sales up to and equal [***] in a Calendar Year, an amount equal to [***] of such portion of Net Sales; (b) For any portion of Net Sales in excess of [***] and up to and equal [***] in a Calendar Year, an amount equal to [***] of such portion of Net Sales; and (c) For any portion of Net Sales in excess of [***] in a Calendar Year, [***] of such portion of Net Sales.",
+      "source_contract": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+      "cuad_category": "Revenue/Profit Sharing",
+      "product_category": "Payment",
+      "char_length": 633
+    },
+    {
+      "clause_text": "The Company also reserves the right to increase or decrease the price per unit based on Company wide changes in unit prices to all distributors of the Company, provided however, that any price changes, other than those based on the CPI, shall be uniformly applied to all distributors of the Products and shall reasonably applied to all distributors of the Products and shall reasonably reflect Company's costs of manufacturing the Products and/or market demand for the Products, provided further than any increase in price based upon market demand shall not be so great as to deprive Distributor of its normal and customary profit margin.",
+      "source_contract": "LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT",
+      "cuad_category": "Price Restrictions",
+      "product_category": "Payment",
+      "char_length": 638
+    },
+    {
+      "clause_text": "In each and every calendar year of this Agreement, CONSULTANT shall achieve a satisfactory record of play in a minimum of [* ****] professional golf association events on the SPGA and/or PGA tour (which shall include both the PGA and SPGA Tour Skins Games).",
+      "source_contract": "ADAMSGOLFINC_03_21_2005-EX-10.17-ENDORSEMENT AGREEMENT",
+      "cuad_category": "Minimum Commitment",
+      "product_category": "Payment",
+      "char_length": 257
+    },
+    {
+      "clause_text": "The Company will compensate Consultant at the rate of $400 per hour (19 hours cap monthly; anything over these hrs must be preapproved by management), payable in accordance with the Company's standard payroll schedule, and subject to withholding as legally required.",
+      "source_contract": "KIROMICBIOPHARMA,INC_05_11_2020-EX-10.23-CONSULTING AGREEMENT",
+      "cuad_category": "Volume Restriction",
+      "product_category": "Payment",
+      "char_length": 266
+    },
+    {
+      "clause_text": "As further consideration for the license and grant of Distribution Rights and other rights under this Agreement, EKR shall pay to PPI a royalty (\"Royalty\") equal to (a) $[**] for each [**] mg Vial of Product sold during the Term and $[**] for each [**] mg Vial of Product sold during the Term (the \"Minimum Royalty\") plus (b) an additional [**]% of any post Effective Date incremental price increase implemented by EKR over the Current Base Price of $[**] for the [**] mg Vial and $[**] for the [**] mg Vial (the \"Additional Royalty\"); provided, however, that Additional Royalty shall not be payable to the extent that the sum of (i) the Minimum Royalty and Additional Royalty payable hereunder and (ii) the Supply Price (as defined in the Supply Agreement) shall at any time during the Term exceed [**] percent ([**]%) of the net average selling price of the Product (the \"Royalty Cap\"); provided, however, that the Royalty Cap shall be [**] percent ([**]%) of the net average selling price of the Product during certain periods as described in Section 6.3(e) above.",
+      "source_contract": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT ",
+      "cuad_category": "Revenue/Profit Sharing",
+      "product_category": "Payment",
+      "char_length": 1067
+    },
+    {
+      "clause_text": "Subject to the remainder of this Section 3.2(b), on a Facility-by-Facility basis, if the Facility Conversion Costs of a Facility during any Fiscal Year following the first full Fiscal Year of the Term of the applicable Facility Addendum (such Fiscal Year, a \"Facility Conversion Cost Adjustment Fiscal Year\") are estimated to be (a) less than seventy-five percent (75%) of the Facility Conversion Costs for the Facility Conversion Cost Baseline Fiscal Year (as defined below) or (b) greater than one hundred and twenty-five percent (125%) of the Facility Conversion Costs for the Facility Conversion Cost Baseline Fiscal Year (clauses (a) and (b) referred to collectively as the \"Facility Conversion Cost Threshold\"), when adjusted to reflect a constant volume between the Facility Conversion Cost Adjustment Fiscal Year and the Facility Conversion Cost Baseline Fiscal Year, then the Price for such Product will be updated beginning with such Facility Conversion Cost Adjustment Fiscal Year to reflect one hundred and ten percent (110%) of the increase or decrease in Facility Conversion Costs.",
+      "source_contract": "UpjohnInc_20200121_10-12G_EX-2.6_11948692_EX-2.6_Manufacturing Agreement_ Supply Agreement",
+      "cuad_category": "Price Restrictions",
+      "product_category": "Payment",
+      "char_length": 1095
+    },
+    {
+      "clause_text": "For any Product or Solution sold to any perspective clients introduced by Bravatek registered with COMPANY via email to COMPANY's CEO and delivered through Bravatek or a COMPANY-designated distribution affiliate(s) or sales channel(s), Bravatek will receive a lead-finder fee, to be mutually discussed and finally decided by COMPANY at the range of minimum of 10% to maximum of 20% of project revenue, with an exact fee to be depending upon the overall project sales margin and cost of development and delivery of each project, payable NET 30 days after each client payment on delivered products received at COMPANY's bank account.",
+      "source_contract": "SIBANNAC,INC_12_04_2017-EX-2.1-Strategic Alliance Agreement",
+      "cuad_category": "Minimum Commitment",
+      "product_category": "Payment",
+      "char_length": 631
+    },
+    {
+      "clause_text": "The foregoing obligations of Wildform, following the initial 30 day period, shall be limited to a maximum of twenty (20) hours, or up to a maximum of one hundred twenty five (125) emails, whichever accumulates first.",
+      "source_contract": "ON2TECHNOLOGIES,INC_11_17_2006-EX-10.3-SUPPORT AND MAINTENANCE AGREEMENT",
+      "cuad_category": "Volume Restriction",
+      "product_category": "Payment",
+      "char_length": 216
+    },
+    {
+      "clause_text": "For the services to be rendered and facilities to be provided by the Sponsor hereunder, the Trust shall pay Domini a fee accrued daily and payable monthly at an annual rate equal to 0.50% of the Trust's average daily net assets for the Trust's then current fiscal year.",
+      "source_contract": "DOMINIADVISORTRUST_02_18_2005-EX-99.(H)(2)-SPONSORSHIP AGREEMENT",
+      "cuad_category": "Revenue/Profit Sharing",
+      "product_category": "Payment",
+      "char_length": 269
+    },
+    {
+      "clause_text": "The Use Fees shall remain the same as in the Initial Period and the fee for the Services shall not exceed $7000 for additional journals, $2000 maintenance fee on existing journals and $2000 per Gigabyte.",
+      "source_contract": "HEALTHGATEDATACORP_11_24_1999-EX-10.1-HOSTING AND MANAGEMENT AGREEMENT (1)",
+      "cuad_category": "Price Restrictions",
+      "product_category": "Payment",
+      "char_length": 203
+    },
+    {
+      "clause_text": "The Minimum Payment consists of the Access Fee of US$300,000 per annum and the Second Component that increases from year to year.",
+      "source_contract": "INTRICONCORP_03_10_2009-EX-10.22-Strategic Alliance Agreement",
+      "cuad_category": "Minimum Commitment",
+      "product_category": "Payment",
+      "char_length": 129
+    },
+    {
+      "clause_text": "In the event that Schoolpop exceeds either of these limits, AEIS shall cease fulfilling Orders from Schoolpop until such time that Schoolpop's inventory returns to an acceptable level based on the established maximums.",
+      "source_contract": "LOYALTYPOINTINC_11_16_2004-EX-10.2-RESELLER AGREEMENT",
+      "cuad_category": "Volume Restriction",
+      "product_category": "Payment",
+      "char_length": 218
+    },
+    {
+      "clause_text": "In consideration of the services rendered pursuant to this Agreement, Integrity shall receive the excess, if any, of the sales price, as set forth in the Fund's Registration Statement, over the net asset value of Shares sold by Integrity, as underwriter.",
+      "source_contract": "IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement",
+      "cuad_category": "Revenue/Profit Sharing",
+      "product_category": "Payment",
+      "char_length": 254
+    },
+    {
+      "clause_text": "To the extent that the Village Media Company and PFHOF work collaboratively on media projects, the EP's services on such projects for the benefit of PFHOF shall be charged to PFHOF at cost without markup.",
+      "source_contract": "GpaqAcquisitionHoldingsInc_20200123_S-4A_EX-10.6_11951677_EX-10.6_License Agreement",
+      "cuad_category": "Price Restrictions",
+      "product_category": "Payment",
+      "char_length": 204
+    },
+    {
+      "clause_text": "You agree to conduct a Grand Opening Advertising Program for the Franchised Business throughout the first four weeks after the Opening Date, spending an amount not less than $12,000.",
+      "source_contract": "PfHospitalityGroupInc_20150923_10-12G_EX-10.1_9266710_EX-10.1_Franchise Agreement1",
+      "cuad_category": "Minimum Commitment",
+      "product_category": "Payment",
+      "char_length": 182
+    },
+    {
+      "clause_text": "LEA shall compensate T&B Personality the sum of [$\u25cf] plus first-class air and hotel accommodations for up to three (3) additional persons for each such appearance.",
+      "source_contract": "LegacyEducationAllianceInc_20200330_10-K_EX-10.18_12090678_EX-10.18_Development Agreement",
+      "cuad_category": "Volume Restriction",
+      "product_category": "Payment",
+      "char_length": 163
+    },
+    {
+      "clause_text": "In addition to the 5% amount calculated pursuant to the preceding paragraph, there shall be an identical 5% amount to be paid from THI, per Premier's consideration, to certain shareholders of Premier, as identified by Premier, as of a record date to be determined in the future, on an annual basis, commencing on the one-year anniversary of this Agreement until a total amount of $40,000,000 has been paid to Premier.",
+      "source_contract": "PREMIERBIOMEDICALINC_05_14_2020-EX-10.2-INTELLECTUAL PROPERTY AGREEMENT",
+      "cuad_category": "Revenue/Profit Sharing",
+      "product_category": "Payment",
+      "char_length": 417
+    },
+    {
+      "clause_text": "No later than 30 days after the end of each contract year the Base Fee must be increased or decreased in accordance with the increase or decrease in the CPI and such increases or decreases will be calculated by using the following formula:",
+      "source_contract": "ELANDIAINTERNATIONALINC_04_25_2007-EX-10.21-Outsourcing Agreement",
+      "cuad_category": "Price Restrictions",
+      "product_category": "Payment",
+      "char_length": 239
+    },
+    {
+      "clause_text": "Consultant hereby irrevocably assigns to Company all right, title and interest in and to any information (including, without limitation, business plans and/or business information), technology, know-how, materials, notes, records, designs, ideas, inventions, improvements, devices, developments, discoveries, compositions, trade secrets, processes, methods and/or techniques, whether or not patentable or copyrightable, that are conceived, reduced to practice or made by Consultant alone or jointly with others in the course of performing the Services or through the use of Confidential Information (collectively, 111nventions\").",
+      "source_contract": "KIROMICBIOPHARMA,INC_05_11_2020-EX-10.23-CONSULTING AGREEMENT",
+      "cuad_category": "Ip Ownership Assignment",
+      "product_category": "Intellectual Property",
+      "char_length": 629
+    },
+    {
+      "clause_text": "Joint Improvements shall be owned jointly by the Parties, and PPI's interest therein shall be licensed to EKR hereunder.",
+      "source_contract": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT ",
+      "cuad_category": "Joint Ip Ownership",
+      "product_category": "Intellectual Property",
+      "char_length": 120
+    },
+    {
+      "clause_text": "Company hereby appoints Distributor as Company's exclusive distributor within the Market and grants to Distributor the exclusive right to sell and distribute Products within the Market, and Distributor hereby accepts such appointment and such grant, in accordance with the terms and conditions of this Agreement.",
+      "source_contract": "LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT",
+      "cuad_category": "License Grant",
+      "product_category": "Intellectual Property",
+      "char_length": 312
+    },
+    {
+      "clause_text": "Except to Affiliates of Valeant, Valeant's rights and obligations under this Section 2.1 are non-transferable, non-assignable, and non-delegable.",
+      "source_contract": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+      "cuad_category": "Non-Transferable License",
+      "product_category": "Intellectual Property",
+      "char_length": 145
+    },
+    {
+      "clause_text": "Subject to the terms and conditions of this Agreement, Commerce One hereby grants to Corio a fee-bearing, perpetual and irrevocable, nonexclusive, nontransferable (except in accordance with Section 14.1 of this Agreement), right and license in the Territory to",
+      "source_contract": "CORIOINC_07_20_2000-EX-10.5-LICENSE AND HOSTING AGREEMENT",
+      "cuad_category": "Unlimited/All-You-Can-Eat-License",
+      "product_category": "Intellectual Property",
+      "char_length": 260
+    },
+    {
+      "clause_text": "Subject to the terms and conditions of this Agreement, as of the Distribution Date, Nuance hereby grants to SpinCo and the members of the SpinCo Group a worldwide, non-exclusive, fully paid-up, perpetual and irrevocable, transferable (subject to ARTICLE VIII), sublicensable (subject to Section 3.01(g)) license to continue to use any Nuance IP (other than Nuance Patents, Nuance Technology Assets, Nuance Trademarks and Nuance Data), in each case solely as and to the extent that it is used by the SpinCo Group in connection with products and services of the SpinCo Business within the SpinCo Field of Use, together with natural extensions and evolutions thereof.",
+      "source_contract": "CerenceInc_20191002_8-K_EX-10.4_11827494_EX-10.4_Intellectual Property Agreement",
+      "cuad_category": "Irrevocable Or Perpetual License",
+      "product_category": "Intellectual Property",
+      "char_length": 664
+    },
+    {
+      "clause_text": "ENERGOUS hereby grants DIALOG a non-exclusive, non-transferable (except as set forth in Section 2) license under the Product IP to use any of the Deposit Materials released from escrow for the purpose of fixing an Epidemic Defect or other Product design or production issue impacting yield or quality during the Term and, if applicable, any Wind Down Period or Continuing Obligation period, including, but not limited to, authorizing any third party subcontractor to manufacture and supply Products, provided, however, that DIALOG continues to make all Royalty payment owed to ENERGOUS (or the then-current owner of the Product IP) as provided in this Agreement.",
+      "source_contract": "ENERGOUSCORP_03_16_2017-EX-10.24-STRATEGIC ALLIANCE AGREEMENT",
+      "cuad_category": "Source Code Escrow",
+      "product_category": "Intellectual Property",
+      "char_length": 662
+    },
+    {
+      "clause_text": "The Incorporated Technology Works shall be the sole property of On2, and all right, title and interest therein shall vest solely in On2 and shall be deemed to be a work made for hire.",
+      "source_contract": "ON2TECHNOLOGIES,INC_11_17_2006-EX-10.3-SUPPORT AND MAINTENANCE AGREEMENT",
+      "cuad_category": "Ip Ownership Assignment",
+      "product_category": "Intellectual Property",
+      "char_length": 183
+    },
+    {
+      "clause_text": "Upon termination of the Agreement, VerticalNet and Impresse shall jointly own all User Data.",
+      "source_contract": "ImpresseCorp_20000322_S-1A_EX-10.11_5199234_EX-10.11_Co-Branding Agreement",
+      "cuad_category": "Joint Ip Ownership",
+      "product_category": "Intellectual Property",
+      "char_length": 92
+    },
+    {
+      "clause_text": "Subject to the terms and conditions of this Agreement, Google grants to Distributor a limited, [ * ] license during the Term to use the Google Trademarks, in accordance with Google's trademark usage guidelines, solely to market and promote the Products consistent with this Agreement, provided that all use of the Google Trademarks shall be subject to Google's prior review and advance written consent.",
+      "source_contract": "WHITESMOKE,INC_11_08_2011-EX-10.26-PROMOTION AND DISTRIBUTION AGREEMENT",
+      "cuad_category": "License Grant",
+      "product_category": "Intellectual Property",
+      "char_length": 402
+    },
+    {
+      "clause_text": "(ii) to make, have made, use, sell, offer for sale, import, and otherwise dispose of Smart Sensing Network Equipment; and (iii) to make, have made, use, sell, offer for sale, import, and otherwise dispose of Public Safety LTE Smartphone Devices.",
+      "source_contract": "ZEBRATECHNOLOGIESCORP_04_16_2014-EX-10.1-INTELLECTUAL PROPERTY AGREEMENT",
+      "cuad_category": "Non-Transferable License",
+      "product_category": "Intellectual Property",
+      "char_length": 245
+    },
+    {
+      "clause_text": "E.piphany allows for unlimited calls to its technical support desk by the HSNS personnel designated under Section 5.7 (\"HSNS Responsibilities.\")",
+      "source_contract": "OASYSMOBILE,INC_07_05_2001-EX-10.17-OUTSOURCING AGREEMENT",
+      "cuad_category": "Unlimited/All-You-Can-Eat-License",
+      "product_category": "Intellectual Property",
+      "char_length": 144
+    },
+    {
+      "clause_text": "Following the expiration of the Royalty Term with respect to the Licensed Product, the licenses granted under Section 2.1 with respect to such Licensed Product in the Field and the Territory shall be non-exclusive, perpetual, irrevocable, fully-paid and royalty-free.",
+      "source_contract": "CytodynInc_20200109_10-Q_EX-10.5_11941634_EX-10.5_License Agreement",
+      "cuad_category": "Irrevocable Or Perpetual License",
+      "product_category": "Intellectual Property",
+      "char_length": 267
+    },
+    {
+      "clause_text": "Sparkling shall not be entitled to make use of the Codes except as provided in Section (b), provided that Sparkling may itself or by retaining independent experts, examine and test the materials for compliance with the obligations of Garman hereunder.",
+      "source_contract": "SPARKLINGSPRINGWATERHOLDINGSLTD_07_03_2002-EX-10.13-SOFTWARE LICENSE AND MAINTENANCE AGREEMENT",
+      "cuad_category": "Source Code Escrow",
+      "product_category": "Intellectual Property",
+      "char_length": 251
+    },
+    {
+      "clause_text": "THC will assign all right, title and interest in and to the THC ERB Domains (those domains owned by THC related to the ERB that do not incorporate the mark/name HERTZ) as set forth on Schedule H to HERC and as more fully set forth in the Domain Name Assignment attached hereto as Exhibit D.",
+      "source_contract": "HERTZGLOBALHOLDINGS,INC_07_07_2016-EX-10.4-INTELLECTUAL PROPERTY AGREEMENT",
+      "cuad_category": "Ip Ownership Assignment",
+      "product_category": "Intellectual Property",
+      "char_length": 290
+    },
+    {
+      "clause_text": "Subject to the limitations set forth in this Agreement, the Joint IP may be used freely by either Party or its Affiliates and licensed to Third Parties by Conformis and its Affiliates, on the one hand, outside of the Buyer Field or by Stryker and its Affiliates, on the other hand, within the Buyer Field, in each case, without the consent of, or duty to account to or notify, the other Party, but, except with respect to external licenses of the Improved Conformis Background IP by Conformis or its Affiliates to Third Parties, any external Third Party license shall be governed in accordance with the last sentence of Section 4.3(c) of the APA.",
+      "source_contract": "ConformisInc_20191101_10-Q_EX-10.6_11861402_EX-10.6_Development Agreement",
+      "cuad_category": "Joint Ip Ownership",
+      "product_category": "Intellectual Property",
+      "char_length": 646
+    },
+    {
+      "clause_text": "CONSULTANT hereby gives and grants to ADAMS GOLF the exclusive right and license to use CONSULTANT'S ENDORSEMENT in connection with the manufacture, sale, distribution, advertising and promotion of PRODUCT in the CONTRACT TERRITORY.",
+      "source_contract": "ADAMSGOLFINC_03_21_2005-EX-10.17-ENDORSEMENT AGREEMENT",
+      "cuad_category": "License Grant",
+      "product_category": "Intellectual Property",
+      "char_length": 232
+    },
+    {
+      "clause_text": "Notwithstanding anything in this Agreement to the contrary, Licensee has no right to sublicense any rights granted hereunder to any third party, or otherwise permit any third party to use any Licensed Domain Names or Licensed Content; provided, however, that any rights granted to Licensee hereunder shall be sublicensable, without the prior written consent of Licensor, to SINA Leju and Licensee's Affiliates that are controlled by SINA Leju solely for the purpose of operating the Business during the Term.",
+      "source_contract": "ChinaRealEstateInformationCorp_20090929_F-1_EX-10.32_4771615_EX-10.32_Content License Agreement",
+      "cuad_category": "Non-Transferable License",
+      "product_category": "Intellectual Property",
+      "char_length": 508
+    },
+    {
+      "clause_text": "Subject to Clauses 9.1 and 9.2, each party's total liability under or in connection with this Agreement (whether in contract, tort or otherwise) arising in any Contract Year is limited to the greater of: (a) [ * ] Euros ([ * ] Euros); and (b) [ * ]% of the total payment due to the Distributor in the relevant Contract Year pursuant to Clause 4 (Payment Terms).",
+      "source_contract": "WHITESMOKE,INC_11_08_2011-EX-10.26-PROMOTION AND DISTRIBUTION AGREEMENT",
+      "cuad_category": "Cap On Liability",
+      "product_category": "Liability",
+      "char_length": 361
+    },
+    {
+      "clause_text": "THE FOREGOING SENTENCE SHALL NOT LIMIT (1) THE OBLIGATIONS OF EITHER PARTY TO INDEMNIFY THE OTHER PARTY FROM AND AGAINST THIRD PARTY CLAIMS UNDER SECTION 11.1 OR 11.2, AS APPLICABLE, OR (2) DAMAGES AVAILABLE FOR A PARTY'S BREACH OF THE CONFIDENTIALITY AND NON-USE OBLIGATIONS IN ARTICLE 9.",
+      "source_contract": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+      "cuad_category": "Uncapped Liability",
+      "product_category": "Liability",
+      "char_length": 289
+    },
+    {
+      "clause_text": "In the event Subcontractor directly employs or contracts with an employee of EDGE without the consent of EDGE, Subcontractor shall pay as liquidated damages two times the then monthly salary of the employee for a three-month period of time.",
+      "source_contract": "FTENETWORKS,INC_02_18_2016-EX-99.4-STRATEGIC ALLIANCE AGREEMENT",
+      "cuad_category": "Liquidated Damages",
+      "product_category": "Liability",
+      "char_length": 240
+    },
+    {
+      "clause_text": "In the event that Company is unable or unwilling to promptly perform any warranty work without reasonable cause and following full and fair opportunity to do so, or in the event of the necessity for emergency repairs of a defective Product for which there is no reasonable possibility of performance by Company, Distributor may perform such warranty work or hire a third party to perform such warranty work and the reasonable cost thereof shall be paid by Company.",
+      "source_contract": "LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT",
+      "cuad_category": "Warranty Duration",
+      "product_category": "Liability",
+      "char_length": 464
+    },
+    {
+      "clause_text": "i-on will not be liable under any circumstances for any lost profits or other consequential damages, even if i-on has been advised as to the possibility of such damages. i-on's liability for damages to the Customer for any cause whatsoever, regardless of the form of action, and whether in contract or in tort, including negligence, shall be limited to one (1) month's fees and the remaining portion of any prepaid fees.",
+      "source_contract": "CENTRACKINTERNATIONALINC_10_29_1999-EX-10.3-WEB SITE HOSTING AGREEMENT",
+      "cuad_category": "Cap On Liability",
+      "product_category": "Liability",
+      "char_length": 420
+    },
+    {
+      "clause_text": "however that such limitation shall not apply to the extent that EKR or any EKR Indemnified Party is required to pay in excess of such amount to a third party in respect of a final judgment or order obtained by the third party or as a result of PPI's breach of Section 7.2.12 of the Supply Agreement.",
+      "source_contract": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT ",
+      "cuad_category": "Uncapped Liability",
+      "product_category": "Liability",
+      "char_length": 299
+    },
+    {
+      "clause_text": "In the event the Closing fails to occur, then, only upon entry of a final and non-appealable order of the Bankruptcy Court determining that such failure was the result of Purchaser's sole, material, non-excusable breach of this Agreement, then Merchant shall be entitled to retain the Deposit as liquidated damages as Merchant's sole remedy for such breach.",
+      "source_contract": "BONTONSTORESINC_04_20_2018-EX-99.3-AGENCY AGREEMENT",
+      "cuad_category": "Liquidated Damages",
+      "product_category": "Liability",
+      "char_length": 357
+    },
+    {
+      "clause_text": "Within 7 days after the arrival of the goods at destination, should the quality, specification, or quantity be found not in conformity with the stipulations of the Contract except those claims for which the insurance company or the owners of the vessel are liable, the Buyers, on the strength of the Inspection Certificate issued by the China Commodity Inspection Bureau, have the right to claim for replacement with new goods, or for compensation, and all the expenses (such as inspection charges, freight for returning the goods and for sending the replacement, insurance premium, storage and loading and unloading charges etc.) shall be borne by the Sellers.",
+      "source_contract": "LohaCompanyltd_20191209_F-1_EX-10.16_11917878_EX-10.16_Supply Agreement",
+      "cuad_category": "Warranty Duration",
+      "product_category": "Liability",
+      "char_length": 661
+    },
+    {
+      "clause_text": "Notwithstanding the provisions of this subsection (d), no Remarketing Agent shall be required to contribute any amount in excess of the amount by which the total price at which the applicable Securities remarketed by it and distributed to the public were offered to the public exceeds the amount of any damages which such Remarketing Agent has otherwise been required to pay by reason of such untrue or alleged untrue statement or omission or alleged omission.",
+      "source_contract": "MetLife, Inc. - Remarketing Agreement",
+      "cuad_category": "Cap On Liability",
+      "product_category": "Liability",
+      "char_length": 460
+    },
+    {
+      "clause_text": "Notwithstanding the preceding sentences, this Subsection will not limit the liability of a Party for any amount or type of damages for: (1) the defense and indemnification of an Indemnified Claim on which the Party is the Indemnifying Party; (2) infringement by the Party on the intellectual property of the other Party; (3) the unauthorized disclosure or use by the Party of the Confidential Information of the other Party; (4) payment or reimbursement of any amount expressly required to be paid or reimbursed by the Party under a provision of this Agreement; or (5) the intentional misconduct of the Party in violation of Applicable Laws.",
+      "source_contract": "ReynoldsConsumerProductsInc_20191115_S-1_EX-10.18_11896469_EX-10.18_Supply Agreement",
+      "cuad_category": "Uncapped Liability",
+      "product_category": "Liability",
+      "char_length": 641
+    },
+    {
+      "clause_text": "The amounts contemplated under Section 16.4 [Liquidated Damages] above is not a penalty and is intended by the parties only as a compensatory remedy for past breaches and not as a preventative remedy to deter future breaches.",
+      "source_contract": "PfHospitalityGroupInc_20150923_10-12G_EX-10.1_9266710_EX-10.1_Franchise Agreement1",
+      "cuad_category": "Liquidated Damages",
+      "product_category": "Liability",
+      "char_length": 225
+    },
+    {
+      "clause_text": "Commerce One will replace any defective media returned to Commerce One during the Warranty Period.",
+      "source_contract": "CORIOINC_07_20_2000-EX-10.5-LICENSE AND HOSTING AGREEMENT",
+      "cuad_category": "Warranty Duration",
+      "product_category": "Liability",
+      "char_length": 98
+    },
+    {
+      "clause_text": "Without limiting the terms set forth in Section 6.09 of the Separation Agreement, none of Nuance, SpinCo or any other member of either Group shall in any event have any Liability to the other or to any other member of the other's Group under this Agreement for any indirect, special, punitive or consequential damages, whether or not caused by or resulting from negligence or breach of obligations hereunder and whether or not informed of the possibility of the existence of such damages.",
+      "source_contract": "CerenceInc_20191002_8-K_EX-10.4_11827494_EX-10.4_Intellectual Property Agreement",
+      "cuad_category": "Cap On Liability",
+      "product_category": "Liability",
+      "char_length": 488
+    },
+    {
+      "clause_text": "Subject to the foregoing as wen as Mobimagic's obligations under this Agreement, Mobimagic shall not in any manner be held or be responsible or liable for any unforeseen contingency, claims, liabilities, demands. losses, damages or expenses arising due to absence of storage or retention of any PC Financial data which shall be the sole responsibility of PC Financial .",
+      "source_contract": "OPERALTD_04_30_2020-EX-4.14-SERVICE AGREEMENT",
+      "cuad_category": "Uncapped Liability",
+      "product_category": "Liability",
+      "char_length": 369
+    },
+    {
+      "clause_text": "Except as otherwise agreed hereunder, if Party A or its subsidiaries fail to pay the Service Fee in full on schedule according to provisions of Article 4.1 and Article 4.2, then Party A or its subsidiaries shall, in addition to the continuance of the payment of Service Fee in full, it shall pay Party B the liquidated damages at a daily interest rate of 0.03% in respect of the outstanding Service Fee.",
+      "source_contract": "TUNIUCORP_03_06_2014-EX-10-COOPERATION AGREEMENT",
+      "cuad_category": "Liquidated Damages",
+      "product_category": "Liability",
+      "char_length": 403
+    },
+    {
+      "clause_text": "The above warranties are valid for a period of [***] from the date of shipment of any Licensed Product to any customer.",
+      "source_contract": "ENERGOUSCORP_03_16_2017-EX-10.24-STRATEGIC ALLIANCE AGREEMENT",
+      "cuad_category": "Warranty Duration",
+      "product_category": "Liability",
+      "char_length": 119
+    },
+    {
+      "clause_text": "IntriCon is not liable in any way to Dynamic Hearing for any indirect, consequential, third party, special or incidental harm, liability, expense, cost, loss or damage, loss of profits, loss of data, exemplary damages or any other indirect commercial or economic loss of any kind whatsoever incurred by Dynamic Hearing whether in negligence, tort, equity, contract or otherwise, arising in connection with this Agreement;",
+      "source_contract": "INTRICONCORP_03_10_2009-EX-10.22-Strategic Alliance Agreement",
+      "cuad_category": "Cap On Liability",
+      "product_category": "Liability",
+      "char_length": 421
+    },
+    {
+      "clause_text": "EXCEPT FOR A PARTY'S OBLIGATIONS SET FORTH IN THIS ARTICLE 13, AND ANY BREACH OF ARTICLE 10 (CONFIDENTIALITY), IN NO EVENT WILL EITHER PARTY BE LIABLE TO THE OTHER PARTY (OR THE OTHER PARTY'S AFFILIATES OR SUBLICENSEES) IN CONNECTION WITH THIS AGREEMENT FOR LOST REVENUE, LOST PROFITS, LOST ROYALTIES, LOST SAVINGS, LOSS OF USE, DAMAGE TO GOODWILL, OR ANY CONSEQUENTIAL, INCIDENTAL, SPECIAL, EXEMPLARY, PUNITIVE OR INDIRECT DAMAGES IN CONNECTION WITH THIS AGREEMENT, HOWEVER CAUSED, UNDER ANY THEORY OF LIABILITY, INCLUDING CONTRACT, NEGLIGENCE, OR STRICT LIABILITY, EVEN IF THAT PARTY HAS BEEN PLACED ON NOTICE OF THE POSSIBILITY OF SUCH DAMAGES.",
+      "source_contract": "CytodynInc_20200109_10-Q_EX-10.5_11941634_EX-10.5_License Agreement",
+      "cuad_category": "Uncapped Liability",
+      "product_category": "Liability",
+      "char_length": 647
+    },
+    {
+      "clause_text": "Subject to Clauses 9.1 and 9.2, neither party shall be liable under this Agreement (whether in contract, tort or otherwise) for any: (a) loss of anticipated savings; (b) loss of business opportunity (which for the avoidance of doubt shall not include loss of advertising revenue); (c) loss of or corruption of data; (d) loss or damage resulting from third party claims; or (e) indirect or consequential losses; suffered or incurred by the other party (whether or not such losses were within the contemplation of the parties at the date of this Agreement).",
+      "source_contract": "WHITESMOKE,INC_11_08_2011-EX-10.26-PROMOTION AND DISTRIBUTION AGREEMENT",
+      "cuad_category": "Uncapped Liability",
+      "product_category": "Indemnity",
+      "char_length": 555
+    },
+    {
+      "clause_text": "Company will carry a reasonable amount of product liability insurance through a reasonably acceptable products liability insurance company and will name the Distributor as an additional insured under that policy. Company will make reasonable efforts to procure a policy, which is non-cancelable, except upon thirty (30) days, advance notice to the Distributor.",
+      "source_contract": "LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT",
+      "cuad_category": "Insurance",
+      "product_category": "Indemnity",
+      "char_length": 360
+    },
+    {
+      "clause_text": "THE FOREGOING SENTENCE SHALL NOT LIMIT (1) THE OBLIGATIONS OF EITHER PARTY TO INDEMNIFY THE OTHER PARTY FROM AND AGAINST THIRD PARTY CLAIMS UNDER SECTION 11.1 OR 11.2, AS APPLICABLE, OR (2) DAMAGES AVAILABLE FOR A PARTY'S BREACH OF THE CONFIDENTIALITY AND NON-USE OBLIGATIONS IN ARTICLE 9.",
+      "source_contract": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+      "cuad_category": "Uncapped Liability",
+      "product_category": "Indemnity",
+      "char_length": 289
+    },
+    {
+      "clause_text": "To be covered by the Seller for 110% invoice value against All Risks and War Risk.",
+      "source_contract": "LohaCompanyltd_20191209_F-1_EX-10.16_11917878_EX-10.16_Supply Agreement",
+      "cuad_category": "Insurance",
+      "product_category": "Indemnity",
+      "char_length": 82
+    },
+    {
+      "clause_text": "however that such limitation shall not apply to the extent that EKR or any EKR Indemnified Party is required to pay in excess of such amount to a third party in respect of a final judgment or order obtained by the third party or as a result of PPI's breach of Section 7.2.12 of the Supply Agreement.",
+      "source_contract": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT ",
+      "cuad_category": "Uncapped Liability",
+      "product_category": "Indemnity",
+      "char_length": 299
+    },
+    {
+      "clause_text": "Each Significant Subsidiary that is required to be organized or licensed as an insurance company in its jurisdiction of incorporation (each, an \"Insurance Subsidiary\" and collectively, the \"Insurance Subsidiaries\") is licensed",
+      "source_contract": "MetLife, Inc. - Remarketing Agreement",
+      "cuad_category": "Insurance",
+      "product_category": "Indemnity",
+      "char_length": 226
+    },
+    {
+      "clause_text": "Notwithstanding the preceding sentences, this Subsection will not limit the liability of a Party for any amount or type of damages for: (1) the defense and indemnification of an Indemnified Claim on which the Party is the Indemnifying Party; (2) infringement by the Party on the intellectual property of the other Party; (3) the unauthorized disclosure or use by the Party of the Confidential Information of the other Party; (4) payment or reimbursement of any amount expressly required to be paid or reimbursed by the Party under a provision of this Agreement; or (5) the intentional misconduct of the Party in violation of Applicable Laws.",
+      "source_contract": "ReynoldsConsumerProductsInc_20191115_S-1_EX-10.18_11896469_EX-10.18_Supply Agreement",
+      "cuad_category": "Uncapped Liability",
+      "product_category": "Indemnity",
+      "char_length": 641
+    },
+    {
+      "clause_text": "Commercial General Liability Insurance providing the limits of coverage written on an occurrence basis, in no event less than $1,000,000 combined single limit and $2,000,000 in the aggregate for personal and bodily injury and death arising therefrom and Broad Form property damage arising out of any one occurrence in connection with the Work or any part thereof, which insurance shall include coverage with the same minimum limits for contractual liability and completed operations liability.",
+      "source_contract": "FTENETWORKS,INC_02_18_2016-EX-99.4-STRATEGIC ALLIANCE AGREEMENT",
+      "cuad_category": "Insurance",
+      "product_category": "Indemnity",
+      "char_length": 493
+    },
+    {
+      "clause_text": "EXCEPT IN THE CASE OF (a) ANY BREACH OF SECTION 10 (CONFIDENTIALITY), (b) THE PARTIES' OBLIGATIONS UNDER SECTION 12 (INDEMNIFICATION), (c) A PARTY'S GROSS NEGLIGENCE OR WILLFUL MISCONDUCT, OR (d) LIABILITY ARISING FROM EPIDEMIC DEFECTS (WHICH WILL BE SUBJECT TO THE LIMITATION SET FORTH IN SECTION 11.2(d)), IN NO EVENT WILL EITHER PARTY BE LIABLE UNDER THIS AGREEMENT, REGARDLESS OF THE FORM OF ANY CLAIM OR ACTION (WHETHER IN CONTRACT, NEGLIGENCE, STRICT LIABILITY OR OTHERWISE), FOR ANY (i) INDIRECT, PUNITIVE, INCIDENTAL, RELIANCE, SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES, INCLUDING, BUT NOT LIMITED TO, LOSS OF BUSINESS, REVENUES, PROFITS OR GOODWILL, OR (ii) AGGREGATE DAMAGES IN EXCESS OF [***].",
+      "source_contract": "ENERGOUSCORP_03_16_2017-EX-10.24-STRATEGIC ALLIANCE AGREEMENT",
+      "cuad_category": "Uncapped Liability",
+      "product_category": "Indemnity",
+      "char_length": 706
+    },
+    {
+      "clause_text": "Until the Designation Rights Termination Date or as otherwise directed by Purchaser or set forth in this Agreement, Merchant shall continue to maintain, subject to the Wind-Down Budget and the Wind-Down Cap, in such amounts as it currently has in effect, all of its liability insurance policies, including but not limited to commercial general liability, products liability, comprehensive public liability, auto liability and umbrella liability insurance, covering injuries to persons and property in, or in connection with, the Assets and/or Merchant's operation of its business and the Store and Distribution Centers; and Merchant shall cause Purchaser to be named as an additional named insured (as its interest may appear) with respect to all such policies.",
+      "source_contract": "BONTONSTORESINC_04_20_2018-EX-99.3-AGENCY AGREEMENT",
+      "cuad_category": "Insurance",
+      "product_category": "Indemnity",
+      "char_length": 761
+    },
+    {
+      "clause_text": "Except for claims under Sections 9.4 [INDEMNIFICATION BY IMPRESSE] and 9.5 [INDEMNIFICATION BY VERTICALNET]",
+      "source_contract": "ImpresseCorp_20000322_S-1A_EX-10.11_5199234_EX-10.11_Co-Branding Agreement",
+      "cuad_category": "Uncapped Liability",
+      "product_category": "Indemnity",
+      "char_length": 107
+    },
+    {
+      "clause_text": "The Venture may acquire insurance on behalf of any Member, employee, agent or other person engaged in the business interest of the Venture against any liability asserted against them or incurred by them while acting in good faith on behalf of the Venture.",
+      "source_contract": "BORROWMONEYCOM,INC_06_11_2020-EX-10.1-JOINT VENTURE AGREEMENT",
+      "cuad_category": "Insurance",
+      "product_category": "Indemnity",
+      "char_length": 255
+    },
+    {
+      "clause_text": "EXCEPT IN CASES OF GROSS NEGLIGENCE, WILLFUL MISCONDUCT OR FRAUD, INDEMNIFICATION CLAIMS UNDER SECTION 5 OR BREACHES OF SECTION 2 (TRADEMARKS), 8 (CONFIDENTIALITY), OR 9 (NO AGENCY RELATIONSHIP), IN NO EVENT SHALL EITHER PARTY OR ITS OFFICERS, DIRECTORS, OR EMPLOYEES BE LIABLE TO THE OTHER PARTY IN CONNECTION WITH THE SUBJECT MATTER HEREOF, FOR ANY SPECIAL, INDIRECT, CONSEQUENTIAL OR PUNITIVE DAMAGES OF ANY KIND, LOST PROFITS OR LOST REVENUE, WHETHER ARISING IN CONTRACT, TORT, NEGLIGENCE, STATUTE, OR OTHERWISE, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.",
+      "source_contract": "AlliedEsportsEntertainmentInc_20190815_8-K_EX-10.19_11788293_EX-10.19_Content License Agreement",
+      "cuad_category": "Uncapped Liability",
+      "product_category": "Indemnity",
+      "char_length": 560
+    },
+    {
+      "clause_text": "HERC shall provide for ten (10) days notice to THC and HSI in the event of any modification, cancellation or termination.",
+      "source_contract": "HERTZGLOBALHOLDINGS,INC_07_07_2016-EX-10.4-INTELLECTUAL PROPERTY AGREEMENT",
+      "cuad_category": "Insurance",
+      "product_category": "Indemnity",
+      "char_length": 121
+    },
+    {
+      "clause_text": "EXCEPT FOR AMOUNTS PAYABLE TO THIRD PARTIES IN CONNECTION WITH CLAIMS SUBJECT TO THE INDEMNIFICATION PROVISIONS OF SECTION 9.1 OR A BREACH OF EITHER PARTY'S OBLIGATIONS UNDER SECTION 5 (CONFIDENTIALITY), NEITHER PARTY WILL, UNDER ANY CIRCUMSTANCES, BE LIABLE TO THE OTHER PARTY FOR ANY LOST PROFITS OR ANY OTHER SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR RELATING TO THIS AGREEMENT EVEN IF THE PARTY HAS BEEN NOTIFIED OF THE POSSIBILITY OF SUCH DAMAGES.",
+      "source_contract": "LegacyEducationAllianceInc_20200330_10-K_EX-10.18_12090678_EX-10.18_Development Agreement",
+      "cuad_category": "Uncapped Liability",
+      "product_category": "Indemnity",
+      "char_length": 471
+    },
+    {
+      "clause_text": "Throughout the entire Term, you must maintain such types of insurance, in such amounts, as we may require.",
+      "source_contract": "PfHospitalityGroupInc_20150923_10-12G_EX-10.1_9266710_EX-10.1_Franchise Agreement1",
+      "cuad_category": "Insurance",
+      "product_category": "Indemnity",
+      "char_length": 106
+    },
+    {
+      "clause_text": "Except in the event of (i) Third Party Claims subject to a Party's indemnification obligations pursuant to Section 10.1, (ii) Third Party Claims subject to a Party's indemnification obligations pursuant to Section 10.2, (iii) the gross negligence, fraud or willful misconduct of a Party or its Personnel, (iv) a Party's willful breach of this Agreement, (v) a breach of Section 13 or (vi) customer liabilities pursuant to, and subject to the limitations set forth in, Section 2.5(e), neither Party's aggregate liability to the other Party (or its Personnel that are indemnitees under Section 10.1 or Section 10.2, as applicable) under this Agreement for the initial twelve (12) month period immediately following the Effective Date, and for any twelve (12) month period thereafter during the Term, shall exceed, on a cumulative basis, the amount that is one and one half (11\u22152) times the aggregate amounts paid or payable pursuant to this Agreement in the preceding twelve (12) month period preceding the loss date by Customer to Manufacturer but solely with respect to the supply hereunder of Product (or Products) for which such corresponding liability arose (the \"Affected Products\") and not any other Products (or if, as of the time the liability arises, this Agreement has not been in effect for twelve (12) months, then the amounts paid or payable by Customer to Manufacturer hereunder during the period from the Effective Date until such time the liability arises, shall be annualized to a full twelve (12) months but solely with respect to the supply hereunder of the Affected Product(s) and not any other Products).",
+      "source_contract": "UpjohnInc_20200121_10-12G_EX-2.6_11948692_EX-2.6_Manufacturing Agreement_ Supply Agreement",
+      "cuad_category": "Uncapped Liability",
+      "product_category": "Indemnity",
+      "char_length": 1624
+    },
+    {
+      "clause_text": "Schoolpop shall, during the term of this Agreement, at its own cost and expense, procure with sound and reputable insurers, the following insurance coverage's: (i) Workers' Compensation Insurance in an amount not less than the statutory limits for the state(s), country or province in where the services are to be performed; (ii) Employer's Liability Insurance not less than (a) $100,000 per occurrence, and not less than $100,000 aggregate limit of liability per policy year for disease, including death at any time resulting therefrom, not caused by accident or (b) such amount as required by law, whichever is higher; (iii) Comprehensive General Liability Insurance, including blanket extended coverage against all hazards, including personal injury and death resulting therefrom, for not less than $1,000,000 per occurrence, and not less than $2,000,000 aggregate; (iv) Automobile Liability insurance against liability arising from the maintenance or use of all owned, non-owned and hired automobiles and trucks used to provide services, with (a) a minimum limit of liability for bodily injury of $1,000,000 in the aggregate, and with a minimum limit of liability for property damage of $500,000 per accident, or (b) amount as required by law, whichever is higher; and (v) fidelity or crime policy of not less than $3,000,000 in the aggregate against misappropriation and/or destruction of Cards.",
+      "source_contract": "LOYALTYPOINTINC_11_16_2004-EX-10.2-RESELLER AGREEMENT",
+      "cuad_category": "Insurance",
+      "product_category": "Indemnity",
+      "char_length": 1400
+    },
+    {
+      "clause_text": "This Agreement is to be construed according to the laws of the State of Illinois.",
+      "source_contract": "LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 81
+    },
+    {
+      "clause_text": "This Agreement is governed by English law and the parties submit to the exclusive jurisdiction of the English courts in relation to any dispute (contractual or non-contractual) concerning this Agreement save that either party may apply to any court for an injunction or other relief to protect its Intellectual Property Rights.",
+      "source_contract": "WHITESMOKE,INC_11_08_2011-EX-10.26-PROMOTION AND DISTRIBUTION AGREEMENT",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 327
+    },
+    {
+      "clause_text": "It will be governed by the law of the People's Republic of China ,otherwise it is governed by United Nations Convention on Contract for the International Sale of Goods.",
+      "source_contract": "LohaCompanyltd_20191209_F-1_EX-10.16_11917878_EX-10.16_Supply Agreement",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 168
+    },
+    {
+      "clause_text": "This Agreement was entered into in the State of Florida, and its validity, construction, interpretation, and legal effect shall be governed by the laws and judicial decisions of the State of Florida applicable to contracts entered into and performed entirely within the State of Florida.",
+      "source_contract": "CENTRACKINTERNATIONALINC_10_29_1999-EX-10.3-WEB SITE HOSTING AGREEMENT",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 287
+    },
+    {
+      "clause_text": "This Agreement shall be governed and construed according to the laws of the State of Kansas.",
+      "source_contract": "ADAMSGOLFINC_03_21_2005-EX-10.17-ENDORSEMENT AGREEMENT",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 92
+    },
+    {
+      "clause_text": "This Agreement shall be governed by the laws of the State of Texas, without reference to its conflicts of law principles.",
+      "source_contract": "KIROMICBIOPHARMA,INC_05_11_2020-EX-10.23-CONSULTING AGREEMENT",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 121
+    },
+    {
+      "clause_text": "This Amendment shall be governed by and construed in accordance with the laws of Japan.",
+      "source_contract": "VEONEER,INC_02_21_2020-EX-10.11-JOINT VENTURE AGREEMENT",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 87
+    },
+    {
+      "clause_text": "This Agreement and any and all matters arising directly or indirectly herefrom shall be governed by and construed and enforced in accordance with the internal laws of the [***] applicable to agreements made and to be performed entirely in such state, including its statutes of limitation but without giving effect to the conflict of law principles thereof.",
+      "source_contract": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 356
+    },
+    {
+      "clause_text": "This Agreement and the relationship between the Parties shall be governed by, and interpreted in accordance with New York law without regard to provisions related to conflicts of laws, and, except as provided in Section 21.2 above, the Parties agree to submit any dispute to the exclusive jurisdiction of the federal and state courts sitting in New York.",
+      "source_contract": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT ",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 354
+    },
+    {
+      "clause_text": "THIS REMARKETING AGREEMENT AND THE PRICING AGREEMENT SHALL BE GOVERNED BY AND CONSTRUED IN ACCORDANCE WITH THE LAWS OF THE STATE OF NEW YORK, WITHOUT REGARD TO PRINCIPLES OF CONFLICTS OF LAW TO THE EXTENT THAT SUCH PRINCIPLES WOULD REQUIRE OR PERMIT THE APPLICATION OF LAWS OF ANOTHER JURISDICTION.",
+      "source_contract": "MetLife, Inc. - Remarketing Agreement",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 298
+    },
+    {
+      "clause_text": "The construction, interpretation, and performance of this Agreement and all transactions under it shall be governed by the laws of the State of Texas, irrespective of its conflict of law principles.",
+      "source_contract": "FTENETWORKS,INC_02_18_2016-EX-99.4-STRATEGIC ALLIANCE AGREEMENT",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 198
+    },
+    {
+      "clause_text": "This Agreement shall be construed and enforced and interpreted in accordance with and governed by the laws of the Commonwealth of Massachusetts without reference to principles of conflicts of law.",
+      "source_contract": "DOMINIADVISORTRUST_02_18_2005-EX-99.(H)(2)-SPONSORSHIP AGREEMENT",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 196
+    },
+    {
+      "clause_text": "Any disputes relating to, arising out of or resulting from this Agreement, including to its execution, performance, or enforcement, shall be governed by, and construed in accordance with, the Laws of the State of Delaware, regardless of the Laws that might otherwise govern under applicable principles of conflicts of Laws thereof.",
+      "source_contract": "CerenceInc_20191002_8-K_EX-10.4_11827494_EX-10.4_Intellectual Property Agreement",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 331
+    },
+    {
+      "clause_text": "This Agreement and all claims or causes of action arising out of or related to this Agreement shall be governed in all respects, including as to validity, interpretation and effect, by the laws of the State of Illinois and the United States of America, without giving effect to its principles or rules of conflict of laws.",
+      "source_contract": "ReynoldsConsumerProductsInc_20191115_S-1_EX-10.18_11896469_EX-10.18_Supply Agreement",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 322
+    },
+    {
+      "clause_text": "This Agreement shall be construed in accordance with the laws of the State of Kansas.",
+      "source_contract": "IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 85
+    },
+    {
+      "clause_text": "This Agreement and the rights of the Parties hereunder shall be governed by and construed in accordance with the laws of the Commonwealth of Pennsylvania including all matters of construction, validity, performance, and enforcement and without giving effect to the principles of conflict of laws.",
+      "source_contract": "PREMIERBIOMEDICALINC_05_14_2020-EX-10.2-INTELLECTUAL PROPERTY AGREEMENT",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 296
+    },
+    {
+      "clause_text": "This Agreement is entered into in the State of Texas and shall be interpreted according to the laws of the State of Texas.",
+      "source_contract": "SIBANNAC,INC_12_04_2017-EX-2.1-Strategic Alliance Agreement",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 122
+    },
+    {
+      "clause_text": "This Agreement is governed by the laws of Victoria, Australia and the parties submit to the jurisdiction of the courts of Victoria, Australia",
+      "source_contract": "INTRICONCORP_03_10_2009-EX-10.22-Strategic Alliance Agreement",
+      "cuad_category": "Governing Law",
+      "product_category": "Governing Law",
+      "char_length": 141
+    }
+  ]
+}

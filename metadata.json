@@ -1,0 +1,8 @@
+{
+  "name": "Remix ContractSentry",
+  "description": "AI-powered contract review, clause segmentation, and risk analysis framework featuring a FastAPI backend and clause playbook.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

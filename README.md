@@ -1,140 +1,65 @@
-<div align="center">
+# ContractSentry
 
-# 🛡️ ContractSentry
-
-### AI-Powered Legal Contract Risk-Review Agent
-
-**Analyze. Retrieve. Detect. Explain.**
-
-An AI-powered system that analyzes legal contracts, identifies potentially risky clauses,
-and provides reference-based insights using **LLMs + RAG + a Legal Clause Playbook**.
-
-<br>
-
-[![Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Visit%20App-2ea44f?style=for-the-badge)](YOUR_DEMO_LINK)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/Subhatra-tech/ContractSentry)
-[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![React](https://img.shields.io/badge/React-TypeScript-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![RAG](https://img.shields.io/badge/AI-RAG-purple?style=flat-square)](#-how-it-works)
-[![ChromaDB](https://img.shields.io/badge/Vector%20DB-ChromaDB-orange?style=flat-square)](https://www.trychroma.com/)
-
-</div>
+ContractSentry is an AI-powered contract review, clause segmentation, and risk analysis platform. It scans commercial agreements to identify non-standard covenants, calculate clause risk scores, explain legal liabilities in plain English, and provide market-benchmarked redlines.
 
 ---
 
-## 📌 Overview
+## Backend Setup & Execution Runbook
 
-**ContractSentry** is an AI-powered contract risk-review agent designed to help users
-quickly understand potential risks hidden inside legal contracts.
+To run the FastAPI backend server locally with PostgreSQL pgvector search and the CUAD reference playbook:
 
-Instead of manually reviewing every clause, ContractSentry:
+### 1. Initialize Virtual Environment
+```bash
+cd contractsentry/backend
+python3 -m venv venv
+source venv/bin/activate
+# On Windows:
+# venv\Scripts\activate
+```
 
-**📄 Extracts → 🔍 Segments → 📚 Retrieves → 🧠 Analyzes → ⚠️ Detects → 💡 Explains**
+### 2. Install Dependency Manifest
+```bash
+pip install -r requirements.txt
+```
 
-The system combines **Large Language Models (LLMs)** with **Retrieval-Augmented
-Generation (RAG)** and a reference-based **Legal Clause Playbook**.
+### 3. Seed Clause Playbook Vector Store
+Indexes standard reference clauses from the CUAD dataset directly into the PostgreSQL `playbook_clauses` table with pgvector embeddings:
+```bash
+python3 seed_playbook.py
+```
 
-> ⚠️ ContractSentry is an AI-assisted contract review tool and does not replace
-> professional legal advice.
+### 4. Launch FastAPI via Uvicorn
+```bash
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
 
----
-
-# ✨ Features
-
-<table>
-<tr>
-
-<td width="50%">
-
-### 📄 Contract Processing
-
-Upload a legal contract and extract its
-text for automated analysis.
-
-</td>
-
-<td width="50%">
-
-### 🔍 Clause Segmentation
-
-Break the contract into meaningful
-individual clauses for focused analysis.
-
-</td>
-
-</tr>
-
-<tr>
-
-<td width="50%">
-
-### 🧠 AI Risk Analysis
-
-Use an LLM to analyze contract clauses
-and explain potential concerns.
-
-</td>
-
-<td width="50%">
-
-### 📚 RAG-Based References
-
-Retrieve relevant reference clauses
-from the legal playbook before analysis.
-
-</td>
-
-</tr>
-
-<tr>
-
-<td width="50%">
-
-### ⚠️ Risk Classification
-
-Identify potential risks using levels such
-as LOW, MEDIUM, HIGH and CRITICAL.
-
-</td>
-
-<td width="50%">
-
-### 💡 Explainable Results
-
-Present risk findings in a simple,
-human-readable format.
-
-</td>
-
-</tr>
-</table>
+### 5. Health Check & API Verification
+```bash
+curl http://localhost:8000/health
+# Returns: {"status": "ok", "service": "ContractSentry Review API"}
+```
 
 ---
 
-# 🏗️ System Architecture
+## Frontend Web Application
 
-```mermaid
-flowchart LR
+The frontend is built with React 18, TypeScript, and Tailwind CSS.
 
-    A["👤 User"] --> B["⚛️ React Frontend"]
+### Development Server
+```bash
+npm run dev
+```
 
-    B --> C["⚡ FastAPI Backend"]
+### Production Build
+```bash
+npm run build
+```
 
-    C --> D["📄 PDF Text Extraction"]
+---
 
-    D --> E["🔍 Clause Segmentation"]
+## Core Architecture & Review Pipeline
 
-    E --> F["📚 RAG Retrieval"]
-
-    F --> G["🗄️ ChromaDB"]
-
-    G --> F
-
-    F --> H["🧠 LLM"]
-
-    H --> I["⚠️ Risk Analysis"]
-
-    I --> J["💡 Explanation & Risk Level"]
-
-    J --> B
+1. **Document Ingestion**: Multi-page PDF text extraction and plain text processing.
+2. **Deterministic Clause Segmentation**: Regex-guided parsing identifying major clause categories (Termination, Liability, Payment, Confidentiality, Intellectual Property, Indemnity, Governing Law).
+3. **Playbook Benchmarking**: Comparing incoming clause language against vetted baseline standards from the CUAD dataset.
+4. **Conservative Risk Triage**: Scoring risk (High, Medium, Low), surfacing plain-English liability explanations, and generating balanced redline recommendations.

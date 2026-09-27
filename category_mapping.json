@@ -1,0 +1,139 @@
+{
+  "_metadata": {
+    "source": "Contract Understanding Atticus Dataset (CUAD) v1",
+    "curator": "The Atticus Project",
+    "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "citation": "Hendrycks et al., CUAD: An Expert-Annotated NLP Dataset for Legal Contract Review (2021)",
+    "total_cuad_categories": 41,
+    "total_product_categories": 7
+  },
+  "all_cuad_categories": [
+    "Document Name",
+    "Parties",
+    "Agreement Date",
+    "Effective Date",
+    "Expiration Date",
+    "Renewal Term",
+    "Notice Period To Terminate Renewal",
+    "Governing Law",
+    "Most Favored Nation",
+    "Non-Compete",
+    "Exclusivity",
+    "No-Solicit Of Customers",
+    "Competitive Restriction Exception",
+    "No-Solicit Of Employees",
+    "Non-Disparagement",
+    "Termination For Convenience",
+    "Rofr/Rofo/Rofn",
+    "Change Of Control",
+    "Anti-Assignment",
+    "Revenue/Profit Sharing",
+    "Price Restrictions",
+    "Minimum Commitment",
+    "Volume Restriction",
+    "Ip Ownership Assignment",
+    "Joint Ip Ownership",
+    "License Grant",
+    "Non-Transferable License",
+    "Affiliate License-Licensor",
+    "Affiliate License-Licensee",
+    "Unlimited/All-You-Can-Eat-License",
+    "Irrevocable Or Perpetual License",
+    "Source Code Escrow",
+    "Post-Termination Services",
+    "Audit Rights",
+    "Uncapped Liability",
+    "Cap On Liability",
+    "Liquidated Damages",
+    "Warranty Duration",
+    "Insurance",
+    "Covenant Not To Sue",
+    "Third Party Beneficiary"
+  ],
+  "category_mappings": {
+    "Termination": {
+      "product_category": "Termination",
+      "match_type": "direct_match",
+      "is_flagged": false,
+      "mapped_cuad_categories": [
+        "Termination For Convenience",
+        "Notice Period To Terminate Renewal",
+        "Renewal Term",
+        "Post-Termination Services"
+      ],
+      "description": "Termination clauses governing unilateral termination without cause, non-renewal notification windows, term renewal mechanics, and post-termination transition commitments.",
+      "notes": "Direct alignment across four CUAD categories covering voluntary exit, renewal notice, and wind-down obligations."
+    },
+    "Payment": {
+      "product_category": "Payment",
+      "match_type": "direct_match",
+      "is_flagged": false,
+      "mapped_cuad_categories": [
+        "Revenue/Profit Sharing",
+        "Price Restrictions",
+        "Minimum Commitment",
+        "Volume Restriction"
+      ],
+      "description": "Financial and pricing terms including royalties/revenue sharing, price escalation restrictions, minimum purchase orders, and volume tier adjustments.",
+      "notes": "Direct alignment across four CUAD commercial pricing and financial obligation categories."
+    },
+    "Confidentiality": {
+      "product_category": "Confidentiality",
+      "match_type": "no_direct_match",
+      "is_flagged": true,
+      "mapped_cuad_categories": [],
+      "description": "Confidentiality and non-disclosure obligations protecting proprietary technical and business disclosures.",
+      "notes": "FLAGGED: CUAD v1 does NOT have a dedicated 'Confidentiality' or 'Non-Disclosure' category among its 41 labels. The Atticus Project designed CUAD primarily for corporate M&A due diligence, where NDAs are typically separate standalone agreements. Confidentiality is only mentioned in CUAD as a carve-out example under 'Uncapped Liability'. Per instructions, this absence is explicitly flagged and NOT forced into an unrelated bucket."
+    },
+    "Intellectual Property": {
+      "product_category": "Intellectual Property",
+      "match_type": "direct_match",
+      "is_flagged": false,
+      "mapped_cuad_categories": [
+        "Ip Ownership Assignment",
+        "Joint Ip Ownership",
+        "License Grant",
+        "Non-Transferable License",
+        "Unlimited/All-You-Can-Eat-License",
+        "Irrevocable Or Perpetual License",
+        "Source Code Escrow"
+      ],
+      "description": "Ownership assignments of created works, joint technology rights, license grants, license restrictions, unlimited usage provisions, and source code escrow triggers.",
+      "notes": "Comprehensive direct alignment with 7 CUAD intellectual property and licensing categories."
+    },
+    "Liability": {
+      "product_category": "Liability",
+      "match_type": "direct_match",
+      "is_flagged": false,
+      "mapped_cuad_categories": [
+        "Cap On Liability",
+        "Uncapped Liability",
+        "Liquidated Damages",
+        "Warranty Duration"
+      ],
+      "description": "Risk allocation provisions including overall monetary caps on damages, carve-outs to limitations of liability, liquidated damages clauses, and warranty duration limitations.",
+      "notes": "Direct alignment with 4 CUAD liability and risk mitigation categories."
+    },
+    "Indemnity": {
+      "product_category": "Indemnity",
+      "match_type": "partial_indirect_match",
+      "is_flagged": true,
+      "mapped_cuad_categories": [
+        "Uncapped Liability",
+        "Insurance"
+      ],
+      "description": "Third-party claim indemnification obligations, defense requirements, and insurance coverage mandates backing contractual liabilities.",
+      "notes": "FLAGGED: CUAD v1 does not have an isolated standalone 'Indemnification' category label. However, contractual indemnity obligations are explicitly annotated in CUAD under 'Uncapped Liability' (where third-party indemnification commitments are carved out from liability caps) and 'Insurance' (which mandates coverage to satisfy indemnified claims). Extracted clauses draw from these genuine indemnity and risk-backing provisions."
+    },
+    "Governing Law": {
+      "product_category": "Governing Law",
+      "match_type": "direct_match",
+      "is_flagged": false,
+      "mapped_cuad_categories": [
+        "Governing Law"
+      ],
+      "description": "Choice of law, jurisdiction, venue selection, and applicable statutory frameworks governing contract interpretation.",
+      "notes": "Direct 1:1 match with CUAD's 'Governing Law' category."
+    }
+  }
+}
